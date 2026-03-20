@@ -16,6 +16,11 @@ const body = Manrope({
 export const metadata: Metadata = {
   title: "Fremlos Media",
   description: "Video produkce pro značky, eventy a sociální sítě.",
+  icons: {
+    icon: [{ url: "/favicon-sexy.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon-sexy.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/favicon-sexy.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
