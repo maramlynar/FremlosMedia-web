@@ -778,6 +778,25 @@ video:not([controls])::-webkit-media-controls-overlay-play-button {
   -webkit-appearance: none;
 }
 
+video:not([controls])::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video:not([controls])::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video:not([controls])::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video:not([controls]) {
+  pointer-events: none;
+}
+
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
