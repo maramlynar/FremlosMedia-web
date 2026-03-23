@@ -485,7 +485,18 @@ export default function Home() {
   const setField =
     (field: keyof typeof formData) =>
     (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-      setFormData((prev) => ({ ...prev, [field]: event.target.value }));
+      const nextValue = event.target.value;
+      setFormData((prev) => {
+        if (field === "category") {
+          return {
+            ...prev,
+            category: nextValue,
+            deadline: nextValue === "eventove-videa" ? prev.deadline : "",
+          };
+        }
+
+        return { ...prev, [field]: nextValue };
+      });
     };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -825,10 +836,12 @@ export default function Home() {
                       </option>
                     </select>
                   </label>
-                  <label>
-                    {formCopy.deadline}
-                    <input onChange={setField("deadline")} type="date" value={formData.deadline} />
-                  </label>
+                  {formData.category === "eventove-videa" && (
+                    <label>
+                      {formCopy.deadline}
+                      <input onChange={setField("deadline")} type="date" value={formData.deadline} />
+                    </label>
+                  )}
                 </div>
 
                 <label>
