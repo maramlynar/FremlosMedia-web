@@ -47,9 +47,13 @@ async function sendViaResend(payload: {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO || "info@fremlosmedia.cz";
   const from = process.env.CONTACT_FROM || "Fremlos Media <onboarding@resend.dev>";
+  const allowLogOnly = process.env.CONTACT_ALLOW_LOG_ONLY === "true";
 
   if (!apiKey || !to) {
-    return { sent: false, mode: "log-only" as const };
+    if (allowLogOnly) {
+      return { sent: false, mode: "log-only" as const };
+    }
+    throw new Error("Missing contact email configuration.");
   }
 
   const html = `
@@ -132,11 +136,16 @@ export async function POST(request: NextRequest) {
 
     if (delivery.mode === "log-only") {
       console.info("[contact] log-only submission", { name, email, company, category, budget, deadline, message });
+      return NextResponse.json(
+        { ok: true, message: "Accepted in log-only mode (CONTACT_ALLOW_LOG_ONLY=true)." },
+        { status: 202 }
+      );
     }
 
     return NextResponse.json({ ok: true, message: "Inquiry sent." });
   } catch (error) {
     console.error("[contact] failed", error);
-    return NextResponse.json({ ok: false, message: "Failed to send inquiry." }, { status: 502 });
+    const message = error instanceof Error ? error.message : "Failed to send inquiry.";
+    return NextResponse.json({ ok: false, message }, { status: 502 });
   }
 }

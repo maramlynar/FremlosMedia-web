@@ -499,10 +499,15 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const payload = (await response.json()) as { ok?: boolean; message?: string };
+      let payload: { ok?: boolean; message?: string } = {};
+      try {
+        payload = (await response.json()) as { ok?: boolean; message?: string };
+      } catch {
+        payload = {};
+      }
 
       if (!response.ok || !payload.ok) {
-        throw new Error(payload.message || "Request failed");
+        throw new Error(payload.message || formCopy.error);
       }
 
       setFormStatus("success");
@@ -517,9 +522,9 @@ export default function Home() {
         message: "",
         website: "",
       });
-    } catch {
+    } catch (error) {
       setFormStatus("error");
-      setFormMessage(formCopy.error);
+      setFormMessage(error instanceof Error ? error.message : formCopy.error);
     }
   };
 
@@ -841,14 +846,19 @@ export default function Home() {
                   value={formData.website}
                 />
 
+                {formStatus !== "idle" && (
+                  <p
+                    aria-live="polite"
+                    className={`form-feedback mt-5 ${formStatus === "success" ? "is-success" : "is-error"}`}
+                  >
+                    {formMessage}
+                  </p>
+                )}
+
                 <button className="btn-primary btn-fx mt-5" disabled={formStatus === "submitting"} type="submit">
                   {formStatus === "submitting" ? "Sending..." : formCopy.submit}
                   <span aria-hidden>↗</span>
                 </button>
-
-                {formStatus !== "idle" && (
-                  <p className={`form-feedback ${formStatus === "success" ? "is-success" : "is-error"}`}>{formMessage}</p>
-                )}
               </form>
             </div>
           </article>
