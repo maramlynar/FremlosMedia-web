@@ -719,6 +719,7 @@ export default function Home() {
           <div className="about-stage">
             {content.aboutMembers.map((member, index) => {
               const roleColor = index % 2 === 0 ? "var(--orange)" : "var(--cyan)";
+              const poster = `/images/posters/team/${member.video.split("/").pop()}.png`;
 
               return (
                 <article
@@ -729,12 +730,9 @@ export default function Home() {
                   <div className="about-card-media">
                     <video
                       muted
-                      onLoadedData={(event) => {
-                        event.currentTarget.pause();
-                        event.currentTarget.currentTime = 0;
-                      }}
+                      poster={poster}
                       playsInline
-                      preload="auto"
+                      preload="none"
                       ref={(el) => {
                         aboutVideoRefs.current[index] = el;
                       }}
