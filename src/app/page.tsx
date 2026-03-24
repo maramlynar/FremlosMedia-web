@@ -719,7 +719,9 @@ export default function Home() {
           <div className="about-stage">
             {content.aboutMembers.map((member, index) => {
               const roleColor = index % 2 === 0 ? "var(--orange)" : "var(--cyan)";
-              const poster = `/images/posters/team/${member.video.split("/").pop()}.png`;
+              const poster = member.video.includes("dominik1.mov")
+                ? "/images/posters/team/dominik-preview.jpg"
+                : "/images/posters/team/mara-preview.jpg";
 
               return (
                 <article
