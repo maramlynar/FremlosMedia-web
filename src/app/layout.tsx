@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   description: "Video produkce pro značky, eventy a sociální sítě.",
   icons: {
     icon: [
-      { url: "/favicon-v2.ico", type: "image/x-icon" },
-      { url: "/favicon-sexy-v2.svg", type: "image/svg+xml" },
+      { url: "/favicon-fremlos-2026.ico", type: "image/x-icon" },
+      { url: "/favicon-fremlos-2026.svg", type: "image/svg+xml" },
     ],
-    shortcut: [{ url: "/favicon-v2.ico", type: "image/x-icon" }],
-    apple: [{ url: "/favicon-sexy-v2.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon-fremlos-2026.ico", type: "image/x-icon" }],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png" }],
   },
 };
 

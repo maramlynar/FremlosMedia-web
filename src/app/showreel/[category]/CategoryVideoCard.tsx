@@ -1,46 +1,42 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import { useState } from "react";
 import type { ShowreelVideo } from "@/lib/showreel";
 
-function formatDuration(totalSeconds: number) {
-  if (!Number.isFinite(totalSeconds) || totalSeconds <= 0) {
-    return "00:00";
-  }
-
-  const rounded = Math.round(totalSeconds);
-  const minutes = Math.floor(rounded / 60);
-  const seconds = rounded % 60;
-  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-}
-
 export function CategoryVideoCard({ video }: { video: ShowreelVideo }) {
-  const [duration, setDuration] = useState(video.duration);
-  const [isPortrait, setIsPortrait] = useState(video.orientation === "portrait");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const isPortrait = video.orientation === "portrait";
+  const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
 
   return (
     <article className="category-video-card">
       <div className={`video-wrap ${isPortrait ? "is-portrait" : "is-landscape"}`}>
-        <video
-          className="category-video"
-          controls
-          playsInline
-          poster={video.poster}
-          preload="metadata"
-          onLoadedMetadata={(event) => {
-            const media = event.currentTarget;
-            setDuration(formatDuration(media.duration));
-            if (media.videoWidth > 0 && media.videoHeight > 0) {
-              setIsPortrait(media.videoHeight > media.videoWidth);
-            }
-          }}
-        >
-          <source src={video.src} type={video.src.endsWith(".m4v") ? "video/x-m4v" : "video/mp4"} />
-        </video>
+        {isPlaying ? (
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="category-video youtube-embed"
+            src={embedUrl}
+            title={video.title}
+          />
+        ) : (
+          <button
+            aria-label={`Přehrát video ${video.title}`}
+            className="youtube-thumbnail"
+            onClick={() => setIsPlaying(true)}
+            type="button"
+          >
+            <img alt="" className="category-video" src={thumbnailUrl} />
+            <span className="youtube-play" aria-hidden="true" />
+          </button>
+        )}
       </div>
       <div className="mt-4 flex items-center justify-between gap-4">
         <h2 className="text-xl font-semibold">{video.title}</h2>
-        <span className="video-pill">{duration}</span>
+        {video.duration ? <span className="video-pill">{video.duration}</span> : null}
       </div>
       <p className="mt-2 text-zinc-300">{video.noteCs}</p>
       <p className="text-zinc-500">{video.noteEn}</p>
