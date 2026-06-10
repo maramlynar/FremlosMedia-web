@@ -344,12 +344,32 @@ export default function Home() {
 
     const previousRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
 
     return () => {
       window.history.scrollRestoration = previousRestoration;
     };
   }, []);
+
+  useEffect(() => {
+    if (loading || typeof window === "undefined" || !window.location.hash) {
+      return;
+    }
+
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (!target) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 120);
+  }, [loading]);
 
   useEffect(() => {
     if (!showreelOpen) {
