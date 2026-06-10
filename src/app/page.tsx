@@ -18,6 +18,13 @@ type PageCopy = {
   showreelLabel: string;
   showreelTitle: string;
   showreelItems: Array<{ title: string; meta: string; tone: string; href: string }>;
+  caseStudy: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    body: string;
+    cta: string;
+  };
   aboutLabel: string;
   aboutTitle: string;
   aboutLead: string;
@@ -63,18 +70,25 @@ const copy: Record<Language, PageCopy> = {
         href: "/showreel/firemni-videa",
       },
     ],
+    caseStudy: {
+      eyebrow: "PECKA Z NAŠÍ DÍLNY",
+      title: "Life Passion",
+      lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
+      body: "Mrkni do našeho procesu od nápadu, přes natáčecí den, až po střih, zvuk a finální výstup.",
+      cta: "Mrkni na case study",
+    },
     aboutLabel: "",
     aboutTitle: "Tým",
     aboutLead: "Klikni na medailonek a přehraj video se zvukem.",
     aboutMembers: [
       {
-        name: "Dominik",
+        name: "Dominik Freml",
         role: "DP & Sales",
         note: "Budu se o vás starat, řešit vaše přání a požadavky – a potkáte mě na place s kamerou v ruce.",
         video: "/video/dominik1.mov",
       },
       {
-        name: "Mára",
+        name: "Mára Mlynář",
         role: "Edit & FPV",
         note: "Primárně střihám videa, koukám na videa s marketingovým přesahem a proháním FPV drony.",
         video: "/video/mara.mov",
@@ -141,18 +155,25 @@ const copy: Record<Language, PageCopy> = {
         href: "/showreel/firemni-videa",
       },
     ],
+    caseStudy: {
+      eyebrow: "FROM OUR WORKSHOP",
+      title: "Life Passion",
+      lead: "How do you make a video that is more than just a good-looking image?",
+      body: "Take a look inside our process from the idea, through the shoot day, to edit, sound, and final output.",
+      cta: "View the case study",
+    },
     aboutLabel: "",
     aboutTitle: "Team",
     aboutLead: "Click on a profile card and play the video with sound.",
     aboutMembers: [
       {
-        name: "Dominik",
+        name: "Dominik Freml",
         role: "DP & Sales",
         note: "I’ll take care of you, handle your wishes and requirements — and you’ll meet me on set with a camera in my hand.",
         video: "/video/dominik1.mov",
       },
       {
-        name: "Mára",
+        name: "Mára Mlynář",
         role: "Edit & FPV",
         note: "I primarily edit videos, look at videos through a marketing lens, and fly FPV drones.",
         video: "/video/mara.mov",
@@ -219,18 +240,25 @@ const copy: Record<Language, PageCopy> = {
         href: "/showreel/firemni-videa",
       },
     ],
+    caseStudy: {
+      eyebrow: "AUS UNSERER WERKSTATT",
+      title: "Life Passion",
+      lead: "Wie entsteht ein Video, das mehr kann als nur gut aussehen?",
+      body: "Schau in unseren Prozess vom Konzept über den Drehtag bis zu Schnitt, Sound und finalem Output.",
+      cta: "Case Study ansehen",
+    },
     aboutLabel: "",
     aboutTitle: "Team",
     aboutLead: "Klicke auf ein Profil und spiele das Video mit Ton ab.",
     aboutMembers: [
       {
-        name: "Dominik",
+        name: "Dominik Freml",
         role: "DP & Sales",
         note: "Ich kümmere mich um euch, löse eure Wünsche und Anforderungen – und ihr trefft mich am Set mit der Kamera in der Hand.",
         video: "/video/dominik1.mov",
       },
       {
-        name: "Mára",
+        name: "Mára Mlynář",
         role: "Edit & FPV",
         note: "Ich schneide hauptsächlich Videos, schaue auf Videos mit Marketing-Blick und jage FPV-Drohnen.",
         video: "/video/mara.mov",
@@ -686,6 +714,33 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10">
+          <Link
+            className="case-teaser scroll-reveal lang-animate"
+            data-animate
+            href="/case-study/life-passion"
+          >
+            <div className="case-teaser-copy">
+              <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.caseStudy.eyebrow}</p>
+              <h2 className="headline mt-3 text-5xl md:text-7xl">{content.caseStudy.title}</h2>
+              <p className="mt-5 max-w-xl text-xl text-zinc-100 md:text-2xl">{content.caseStudy.lead}</p>
+              <p className="mt-4 max-w-xl text-zinc-300">{content.caseStudy.body}</p>
+              <span className="btn-primary btn-fx mt-7">
+                {content.caseStudy.cta}
+                <span aria-hidden>↗</span>
+              </span>
+            </div>
+            <div className="case-teaser-media" aria-hidden="true">
+              <Image
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 44vw"
+                src="/images/case-studies/life-passion/hero.png"
+              />
+            </div>
+          </Link>
+        </section>
+
         <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10" id="showreel">
           <div className="mb-10 scroll-reveal" data-animate>
             <p className="lang-animate text-xs tracking-[0.26em] text-zinc-300 uppercase">{content.showreelLabel}</p>
@@ -742,7 +797,13 @@ export default function Home() {
                     />
                   </div>
                   <div className="about-card-meta about-card-meta-inline">
-                    <h3 className="text-3xl font-bold">{member.name}</h3>
+                    <h3 className="text-3xl font-bold">
+                      {member.name.split(" ").map((namePart) => (
+                        <span className="block" key={namePart}>
+                          {namePart}
+                        </span>
+                      ))}
+                    </h3>
                     <p className="text-sm tracking-[0.14em] uppercase" style={{ color: roleColor }}>
                       {member.role}
                     </p>

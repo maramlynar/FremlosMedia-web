@@ -493,6 +493,155 @@ body {
   text-shadow: 0 4px 22px rgba(0, 0, 0, 0.35);
 }
 
+.case-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(8px);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.case-teaser:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 236, 224, 0.42);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.case-teaser-copy {
+  padding: 8px;
+}
+
+.case-teaser-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  align-self: center;
+  width: 100%;
+  border: 1px solid rgba(255, 236, 224, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #050505;
+}
+
+.case-teaser-media img {
+  object-fit: cover;
+  transition: transform 0.34s ease, filter 0.34s ease;
+  filter: saturate(1.08) contrast(1.02) brightness(0.86);
+}
+
+.case-teaser:hover .case-teaser-media img {
+  transform: scale(1.04);
+  filter: saturate(1.14) contrast(1.05) brightness(0.92);
+}
+
+.case-study-video {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 12px;
+  overflow: hidden;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.case-study-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 14px;
+  background: #000;
+}
+
+.case-study-video video {
+  display: block;
+  width: 100%;
+  max-height: 76vh;
+  border-radius: 14px;
+  background: #000;
+}
+
+.case-study-copy {
+  display: grid;
+  gap: 24px;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.case-study-flow-item {
+  display: grid;
+  gap: 12px;
+}
+
+.case-study-copy-section {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.case-study-step {
+  margin: 0 0 10px;
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.case-study-copy-section h2 {
+  margin: 0 0 12px;
+  color: #fff1e5;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.case-study-copy-section p {
+  margin: 0;
+  color: #d9d2ca;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.case-study-copy-section p + p {
+  margin-top: 14px;
+}
+
+.case-study-visual-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.case-study-gallery {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.case-study-bts-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.case-study-gallery-card {
+  margin: 0;
+  overflow: hidden;
+}
+
+.case-study-gallery-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .category-page {
   min-height: 100vh;
 }
@@ -1130,6 +1279,50 @@ video:not([controls]) {
 }
 
 @media (min-width: 900px) {
+  .case-study-copy-section {
+    padding: 24px;
+  }
+
+  .case-study-visual-strip {
+    justify-content: center;
+  }
+
+  .case-study-media-wide {
+    flex: 0 1 560px;
+  }
+
+  .case-study-visual-strip .case-study-gallery-card:not(.case-study-media-wide) {
+    flex: 0 1 min(280px, calc(50% - 5px));
+  }
+
+  .case-study-visual-strip .case-study-gallery-card:not(.case-study-media-wide) img {
+    max-height: 420px;
+  }
+
+  .case-teaser {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    padding: 22px;
+  }
+
+  .case-teaser-copy {
+    align-self: center;
+    padding: 18px;
+  }
+
+  .case-study-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-study-bts-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-study-bts-grid .case-study-gallery-card img {
+    height: 420px;
+    object-fit: cover;
+  }
+
   .process-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
