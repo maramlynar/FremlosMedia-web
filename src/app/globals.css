@@ -635,10 +635,6 @@ body {
   filter: saturate(1.08) contrast(1.02) brightness(0.86);
 }
 
-.case-teaser-media-digi img {
-  object-position: center 28%;
-}
-
 .case-teaser:hover .case-teaser-media img {
   transform: scale(1.04);
   filter: saturate(1.14) contrast(1.05) brightness(0.92);

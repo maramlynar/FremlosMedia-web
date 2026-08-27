@@ -121,14 +121,6 @@ const copy: Record<Language, PageCopy> = {
           image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
         },
         {
-          title: "Digisemestr",
-          lead: "Když za vás prodávají vaši zákazníci.",
-          body: "Příběhy absolventů patřily mezi nejúspěšnější reklamní kreativy Digisemestru.",
-          cta: "Mrkni na case study",
-          href: "/case-study/digisemestr",
-          image: "/images/case-studies/digisemestr/fre-6173.jpg",
-        },
-        {
           title: "Life Passion",
           lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
           body: "Pohled do procesu od nápadu přes natáčecí den až po střih, zvuk a finální výstup.",
@@ -247,14 +239,6 @@ const copy: Record<Language, PageCopy> = {
           image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
         },
         {
-          title: "Digisemestr",
-          lead: "When your customers sell for you.",
-          body: "Graduate stories became some of Digisemestr's strongest ad creatives.",
-          cta: "View the case study",
-          href: "/case-study/digisemestr",
-          image: "/images/case-studies/digisemestr/fre-6173.jpg",
-        },
-        {
           title: "Life Passion",
           lead: "How do you make a video that is more than just a good-looking image?",
           body: "A look inside the process from the idea, through the shoot day, to edit, sound, and final output.",
@@ -371,14 +355,6 @@ const copy: Record<Language, PageCopy> = {
           cta: "Case Study ansehen",
           href: "/case-study/nikk-services",
           image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
-        },
-        {
-          title: "Digisemestr",
-          lead: "Wenn eure Kunden für euch verkaufen.",
-          body: "Absolventen-Stories wurden zu starken Werbe-Creatives von Digisemestr.",
-          cta: "Case Study ansehen",
-          href: "/case-study/digisemestr",
-          image: "/images/case-studies/digisemestr/fre-6173.jpg",
         },
         {
           title: "Life Passion",
@@ -906,10 +882,7 @@ export default function Home() {
                   <p className="case-teaser-body mt-3 max-w-xl text-sm leading-6 text-zinc-300">{item.body}</p>
                 </div>
                 <div className="case-teaser-bottom">
-                  <div
-                    className={`case-teaser-media ${item.href.includes("digisemestr") ? "case-teaser-media-digi" : ""}`}
-                    aria-hidden="true"
-                  >
+                  <div className="case-teaser-media" aria-hidden="true">
                     {item.image ? (
                       <Image
                         alt=""
