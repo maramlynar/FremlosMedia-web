@@ -804,7 +804,7 @@ export default function Home() {
               <Image alt="Fremlos Media" className="brand-logo" height={591} src="/logo/fremlos-media-logo-white.png" width={591} />
             </a>
             <nav className="top-nav" aria-label="Hlavní navigace">
-              <a href="#showreel">{content.nav.portfolio}</a>
+              <a href="#portfolio-cards" onClick={scrollToPortfolioCenter}>{content.nav.portfolio}</a>
               <a href="#case-studies">{content.nav.caseStudies}</a>
               <Link href="/studio">{content.nav.studio}</Link>
               <a href="#contact-form">{content.nav.contact}</a>
