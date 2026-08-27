@@ -886,7 +886,12 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="case-teaser-bottom">
-                  <div className="case-teaser-media" aria-hidden="true">
+                  <div
+                    className={`case-teaser-media ${
+                      item.href.includes("life-passion") ? "case-teaser-media-life-passion" : ""
+                    }`}
+                    aria-hidden="true"
+                  >
                     {item.image ? (
                       <Image
                         alt=""
