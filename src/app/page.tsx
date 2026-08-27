@@ -9,6 +9,12 @@ type Language = "cs" | "en" | "de";
 
 type PageCopy = {
   label: string;
+  nav: {
+    portfolio: string;
+    caseStudies: string;
+    studio: string;
+    contact: string;
+  };
   heroTop: string;
   heroBottom: string;
   heroLead: string;
@@ -17,13 +23,27 @@ type PageCopy = {
   reelLabel: string;
   showreelLabel: string;
   showreelTitle: string;
-  showreelItems: Array<{ title: string; meta: string; tone: string; href: string }>;
+  showreelItems: Array<{ title: string; meta: string; tone: string; href: string; image: string }>;
   caseStudy: {
     eyebrow: string;
     title: string;
     lead: string;
     body: string;
     cta: string;
+  };
+  caseStudiesSection: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    itemLabel: string;
+    items: Array<{
+      title: string;
+      lead: string;
+      body: string;
+      cta: string;
+      href: string;
+      image?: string;
+    }>;
   };
   aboutLabel: string;
   aboutTitle: string;
@@ -42,6 +62,12 @@ type PageCopy = {
 const copy: Record<Language, PageCopy> = {
   cs: {
     label: "",
+    nav: {
+      portfolio: "Portfolio",
+      caseStudies: "Case studies",
+      studio: "Studio",
+      contact: "Kontakt",
+    },
     heroTop: "Točíme",
     heroBottom: "videa.",
     heroLead: "Reklamní, eventový, firemní.",
@@ -56,18 +82,21 @@ const copy: Record<Language, PageCopy> = {
         meta: "",
         tone: "",
         href: "/showreel/eventove-videa",
+        image: "/images/portfolio-previews/cz-eventova-videa.png",
       },
       {
         title: "Reklamní videa",
         meta: "",
         tone: "",
         href: "/showreel/reklamni-videa",
+        image: "/images/portfolio-previews/cz-reklamni-videa.png",
       },
       {
         title: "Firemní videa",
         meta: "",
         tone: "",
         href: "/showreel/firemni-videa",
+        image: "/images/portfolio-previews/cz-firemni-videa.png",
       },
     ],
     caseStudy: {
@@ -76,6 +105,38 @@ const copy: Record<Language, PageCopy> = {
       lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
       body: "Mrkni do našeho procesu od nápadu, přes natáčecí den, až po střih, zvuk a finální výstup.",
       cta: "Mrkni na case study",
+    },
+    caseStudiesSection: {
+      eyebrow: "Case studies",
+      title: "Nejen hezký obraz. Výsledek.",
+      intro: "Vybrané projekty, kde řešíme zadání, proces a dopad videa v reálném fungování značky.",
+      itemLabel: "Case study",
+      items: [
+        {
+          title: "NIKK Services",
+          lead: "Z 3 na 8 velkých realizací za rok.",
+          body: "Video se stalo součástí systému, který NIKK Services pomáhá získávat větší klienty a působit jako partner pro komplexnější projekty.",
+          cta: "Mrkni na case study",
+          href: "/case-study/nikk-services",
+          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
+        },
+        {
+          title: "Digisemestr",
+          lead: "Když za vás prodávají vaši zákazníci.",
+          body: "Příběhy absolventů patřily mezi nejúspěšnější reklamní kreativy Digisemestru.",
+          cta: "Mrkni na case study",
+          href: "/case-study/digisemestr",
+          image: "/images/case-studies/digisemestr/fre-6173.jpg",
+        },
+        {
+          title: "Life Passion",
+          lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
+          body: "Pohled do procesu od nápadu přes natáčecí den až po střih, zvuk a finální výstup.",
+          cta: "Mrkni na case study",
+          href: "/case-study/life-passion",
+          image: "/images/case-studies/life-passion/hero.png",
+        },
+      ],
     },
     aboutLabel: "",
     aboutTitle: "Tým",
@@ -127,6 +188,12 @@ const copy: Record<Language, PageCopy> = {
   },
   en: {
     label: "",
+    nav: {
+      portfolio: "Portfolio",
+      caseStudies: "Case studies",
+      studio: "Studio",
+      contact: "Contact",
+    },
     heroTop: "We film",
     heroBottom: "videos.",
     heroLead: "Commercial, event, corporate.",
@@ -141,18 +208,21 @@ const copy: Record<Language, PageCopy> = {
         meta: "",
         tone: "",
         href: "/showreel/eventove-videa",
+        image: "/images/portfolio-previews/en-event-videos.png",
       },
       {
         title: "Commercial videos",
         meta: "",
         tone: "",
         href: "/showreel/reklamni-videa",
+        image: "/images/portfolio-previews/en-commercial-videos.png",
       },
       {
         title: "Corporate videos",
         meta: "",
         tone: "",
         href: "/showreel/firemni-videa",
+        image: "/images/portfolio-previews/en-corporate-videos.png",
       },
     ],
     caseStudy: {
@@ -161,6 +231,38 @@ const copy: Record<Language, PageCopy> = {
       lead: "How do you make a video that is more than just a good-looking image?",
       body: "Take a look inside our process from the idea, through the shoot day, to edit, sound, and final output.",
       cta: "View the case study",
+    },
+    caseStudiesSection: {
+      eyebrow: "Case studies",
+      title: "More than a good-looking image. Results.",
+      intro: "Selected projects focused on the brief, the process, and the role of video in a brand's real-world growth.",
+      itemLabel: "Case study",
+      items: [
+        {
+          title: "NIKK Services",
+          lead: "From 3 to 8 major projects per year.",
+          body: "Video became part of a system that helps NIKK Services win larger clients and present itself as a partner for more complex work.",
+          cta: "View the case study",
+          href: "/case-study/nikk-services",
+          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
+        },
+        {
+          title: "Digisemestr",
+          lead: "When your customers sell for you.",
+          body: "Graduate stories became some of Digisemestr's strongest ad creatives.",
+          cta: "View the case study",
+          href: "/case-study/digisemestr",
+          image: "/images/case-studies/digisemestr/fre-6173.jpg",
+        },
+        {
+          title: "Life Passion",
+          lead: "How do you make a video that is more than just a good-looking image?",
+          body: "A look inside the process from the idea, through the shoot day, to edit, sound, and final output.",
+          cta: "View the case study",
+          href: "/case-study/life-passion",
+          image: "/images/case-studies/life-passion/hero.png",
+        },
+      ],
     },
     aboutLabel: "",
     aboutTitle: "Team",
@@ -212,6 +314,12 @@ const copy: Record<Language, PageCopy> = {
   },
   de: {
     label: "",
+    nav: {
+      portfolio: "Portfolio",
+      caseStudies: "Case studies",
+      studio: "Studio",
+      contact: "Kontakt",
+    },
     heroTop: "Wir drehen",
     heroBottom: "Videos.",
     heroLead: "Werbe-, Event- und Unternehmensvideos.",
@@ -226,18 +334,21 @@ const copy: Record<Language, PageCopy> = {
         meta: "",
         tone: "",
         href: "/showreel/eventove-videa",
+        image: "/images/portfolio-previews/de-eventvideos.png",
       },
       {
         title: "Werbevideos",
         meta: "",
         tone: "",
         href: "/showreel/reklamni-videa",
+        image: "/images/portfolio-previews/de-werbevideos.png",
       },
       {
         title: "Unternehmensvideos",
         meta: "",
         tone: "",
         href: "/showreel/firemni-videa",
+        image: "/images/portfolio-previews/de-firmenvideos.png",
       },
     ],
     caseStudy: {
@@ -246,6 +357,38 @@ const copy: Record<Language, PageCopy> = {
       lead: "Wie entsteht ein Video, das mehr kann als nur gut aussehen?",
       body: "Schau in unseren Prozess vom Konzept über den Drehtag bis zu Schnitt, Sound und finalem Output.",
       cta: "Case Study ansehen",
+    },
+    caseStudiesSection: {
+      eyebrow: "Case studies",
+      title: "Mehr als nur ein gutes Bild. Ergebnis.",
+      intro: "Ausgewählte Projekte mit Briefing, Prozess und Wirkung von Video im echten Markenauftritt.",
+      itemLabel: "Case Study",
+      items: [
+        {
+          title: "NIKK Services",
+          lead: "Von 3 auf 8 große Projekte pro Jahr.",
+          body: "Video wurde Teil eines Systems, das NIKK Services hilft, größere Kunden zu gewinnen und komplexere Projekte glaubwürdiger zu präsentieren.",
+          cta: "Case Study ansehen",
+          href: "/case-study/nikk-services",
+          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
+        },
+        {
+          title: "Digisemestr",
+          lead: "Wenn eure Kunden für euch verkaufen.",
+          body: "Absolventen-Stories wurden zu starken Werbe-Creatives von Digisemestr.",
+          cta: "Case Study ansehen",
+          href: "/case-study/digisemestr",
+          image: "/images/case-studies/digisemestr/fre-6173.jpg",
+        },
+        {
+          title: "Life Passion",
+          lead: "Wie entsteht ein Video, das mehr kann als nur gut aussehen?",
+          body: "Ein Blick in unseren Prozess vom Konzept über den Drehtag bis zu Schnitt, Sound und finalem Output.",
+          cta: "Case Study ansehen",
+          href: "/case-study/life-passion",
+          image: "/images/case-studies/life-passion/hero.png",
+        },
+      ],
     },
     aboutLabel: "",
     aboutTitle: "Team",
@@ -656,20 +799,28 @@ export default function Home() {
         <div className="orb orb-b" style={{ transform: `translateY(${-orbitOffset}px)` }} />
 
         <section className="mx-auto min-h-screen w-full max-w-6xl px-5 pt-7 md:px-10">
-          <header className="scroll-reveal mb-14 flex items-center justify-between" data-animate>
+          <header className="topbar scroll-reveal mb-14 flex items-center justify-between" data-animate>
             <a className="brand-lockup" href="#top">
               <Image alt="Fremlos Media" className="brand-logo" height={591} src="/logo/fremlos-media-logo-white.png" width={591} />
             </a>
-            <div className="lang-switch">
-              <button onClick={() => setLanguage("cs")} type="button" className={language === "cs" ? "active" : ""}>
-                CZ
-              </button>
-              <button onClick={() => setLanguage("en")} type="button" className={language === "en" ? "active" : ""}>
-                EN
-              </button>
-              <button onClick={() => setLanguage("de")} type="button" className={language === "de" ? "active" : ""}>
-                DE
-              </button>
+            <nav className="top-nav" aria-label="Hlavní navigace">
+              <a href="#showreel">{content.nav.portfolio}</a>
+              <a href="#case-studies">{content.nav.caseStudies}</a>
+              <Link href="/studio">{content.nav.studio}</Link>
+              <a href="#contact-form">{content.nav.contact}</a>
+            </nav>
+            <div className="topbar-actions">
+              <div className="lang-switch">
+                <button onClick={() => setLanguage("cs")} type="button" className={language === "cs" ? "active" : ""}>
+                  CZ
+                </button>
+                <button onClick={() => setLanguage("en")} type="button" className={language === "en" ? "active" : ""}>
+                  EN
+                </button>
+                <button onClick={() => setLanguage("de")} type="button" className={language === "de" ? "active" : ""}>
+                  DE
+                </button>
+              </div>
             </div>
           </header>
 
@@ -734,31 +885,48 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10">
-          <Link
-            className="case-teaser scroll-reveal lang-animate"
-            data-animate
-            href="/case-study/life-passion"
-          >
-            <div className="case-teaser-copy">
-              <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.caseStudy.eyebrow}</p>
-              <h2 className="headline mt-3 text-5xl md:text-7xl">{content.caseStudy.title}</h2>
-              <p className="mt-5 max-w-xl text-xl text-zinc-100 md:text-2xl">{content.caseStudy.lead}</p>
-              <p className="mt-4 max-w-xl text-zinc-300">{content.caseStudy.body}</p>
-              <span className="btn-primary btn-fx mt-7">
-                {content.caseStudy.cta}
-                <span aria-hidden>↗</span>
-              </span>
-            </div>
-            <div className="case-teaser-media" aria-hidden="true">
-              <Image
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 44vw"
-                src="/images/case-studies/life-passion/hero.png"
-              />
-            </div>
-          </Link>
+        <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10" id="case-studies">
+          <div className="mb-8 scroll-reveal lang-animate" data-animate>
+            <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.caseStudiesSection.eyebrow}</p>
+            <h2 className="headline mt-3 text-5xl md:text-7xl">{content.caseStudiesSection.title}</h2>
+            <p className="mt-4 max-w-2xl text-zinc-300">{content.caseStudiesSection.intro}</p>
+          </div>
+          <div className="case-study-grid">
+            {content.caseStudiesSection.items.map((item) => (
+              <Link
+                className="case-teaser scroll-reveal lang-animate"
+                data-animate
+                href={item.href}
+                key={item.href}
+              >
+                <div className="case-teaser-copy">
+                  <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.caseStudiesSection.itemLabel}</p>
+                  <h3 className="headline mt-3 text-4xl md:text-5xl">{item.title}</h3>
+                  <p className="case-teaser-lead mt-4 max-w-xl text-lg text-zinc-100">{item.lead}</p>
+                  <p className="case-teaser-body mt-3 max-w-xl text-sm leading-6 text-zinc-300">{item.body}</p>
+                </div>
+                <div className="case-teaser-bottom">
+                  <div
+                    className={`case-teaser-media ${item.href.includes("digisemestr") ? "case-teaser-media-digi" : ""}`}
+                    aria-hidden="true"
+                  >
+                    {item.image ? (
+                      <Image
+                        alt=""
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        src={item.image}
+                      />
+                    ) : null}
+                  </div>
+                  <span className="btn-primary btn-fx case-teaser-cta">
+                    {item.cta}
+                    <span aria-hidden>↗</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10" id="showreel">
@@ -774,11 +942,11 @@ export default function Home() {
                 data-tilt
                 key={item.title}
                 href={item.href}
+                aria-label={item.title}
                 style={{ transitionDelay: `${idx * 120}ms` }}
               >
-                {item.tone ? <p className="showreel-tone">{item.tone}</p> : null}
-                <h3 className="showreel-title text-2xl font-bold">{item.title}</h3>
-                {item.meta ? <p className="mt-2 text-zinc-200">{item.meta}</p> : null}
+                <Image alt="" className="showreel-preview" fill sizes="(max-width: 768px) 100vw, 33vw" src={item.image} />
+                <span className="sr-only">{item.title}</span>
               </Link>
             ))}
           </div>
@@ -888,6 +1056,21 @@ export default function Home() {
                       </option>
                       <option value="firemni-videa">
                         {language === "cs" ? "Firemní videa" : language === "de" ? "Unternehmensvideos" : "Corporate videos"}
+                      </option>
+                      <option value="studio-podcasty-rozhovory">
+                        {language === "cs" ? "Podcasty & rozhovory" : language === "de" ? "Podcasts & Interviews" : "Podcasts & interviews"}
+                      </option>
+                      <option value="studio-talking-head">
+                        Talking head
+                      </option>
+                      <option value="studio-produkty">
+                        {language === "cs" ? "Produkty" : language === "de" ? "Produkte" : "Products"}
+                      </option>
+                      <option value="studio-firemni-obsah">
+                        {language === "cs" ? "Firemní obsah" : language === "de" ? "Unternehmenscontent" : "Company content"}
+                      </option>
+                      <option value="studio-pronajem">
+                        {language === "cs" ? "Pronájem studia" : language === "de" ? "Studiovermietung" : "Studio rental"}
                       </option>
                     </select>
                   </label>
