@@ -1661,7 +1661,7 @@ video:not([controls]) {
 
 @media (min-width: 768px) {
   .case-study-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .case-teaser {
@@ -1716,7 +1716,7 @@ video:not([controls]) {
   }
 
   .case-study-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .case-teaser {
