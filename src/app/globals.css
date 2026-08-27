@@ -1598,20 +1598,24 @@ video:not([controls]) {
 
   .top-nav {
     position: absolute;
-    top: calc(100% + 12px);
-    left: 0;
+    top: calc(100% + 10px);
+    left: auto;
     right: 0;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
-    gap: 6px;
+    width: min(78vw, 260px);
+    gap: 4px;
     padding: 8px;
     border-radius: 18px;
+    border: 1px solid rgba(255, 236, 224, 0.22);
+    background: #170d0a;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.62);
+    backdrop-filter: none;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 20;
+    z-index: 80;
   }
 
   .top-nav.is-open {
@@ -1622,9 +1626,10 @@ video:not([controls]) {
 
   .top-nav a {
     min-width: 0;
-    padding: 11px 12px;
-    text-align: center;
+    padding: 12px 14px;
+    text-align: left;
     font-size: 12px;
+    background: rgba(255, 255, 255, 0.05);
     overflow-wrap: anywhere;
   }
 
