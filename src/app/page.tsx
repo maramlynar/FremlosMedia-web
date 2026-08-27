@@ -900,10 +900,6 @@ export default function Home() {
                   <h3 className="headline mt-3 text-3xl md:text-4xl">{item.title}</h3>
                   <p className="case-teaser-lead mt-4 max-w-xl text-lg text-zinc-100">{item.lead}</p>
                   <p className="case-teaser-body mt-3 max-w-xl text-sm leading-6 text-zinc-300">{item.body}</p>
-                  <span className="btn-primary btn-fx case-teaser-cta">
-                    {item.cta}
-                    <span aria-hidden>↗</span>
-                  </span>
                 </div>
                 <div className="case-teaser-bottom">
                   <div
@@ -921,6 +917,10 @@ export default function Home() {
                       />
                     ) : null}
                   </div>
+                  <span className="btn-primary btn-fx case-teaser-cta">
+                    {item.cta}
+                    <span aria-hidden>↗</span>
+                  </span>
                 </div>
               </Link>
             ))}
