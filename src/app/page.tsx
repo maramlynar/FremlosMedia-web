@@ -423,6 +423,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [heroFrameAspectRatio, setHeroFrameAspectRatio] = useState("16 / 9");
   const [showreelOpen, setShowreelOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -779,11 +780,19 @@ export default function Home() {
             <a className="brand-lockup" href="#top">
               <Image alt="Fremlos Media" className="brand-logo" height={591} src="/logo/fremlos-media-logo-white.png" width={591} />
             </a>
-            <nav className="top-nav" aria-label="Hlavní navigace">
-              <a href="#portfolio-cards" onClick={scrollToPortfolioCenter}>{content.nav.portfolio}</a>
-              <a href="#case-studies">{content.nav.caseStudies}</a>
-              <Link href="/studio">{content.nav.studio}</Link>
-              <a href="#contact-form">{content.nav.contact}</a>
+            <nav className={`top-nav ${menuOpen ? "is-open" : ""}`} aria-label="Hlavní navigace">
+              <a
+                href="#portfolio-cards"
+                onClick={(event) => {
+                  scrollToPortfolioCenter(event);
+                  setMenuOpen(false);
+                }}
+              >
+                {content.nav.portfolio}
+              </a>
+              <a href="#case-studies" onClick={() => setMenuOpen(false)}>{content.nav.caseStudies}</a>
+              <Link href="/studio" onClick={() => setMenuOpen(false)}>{content.nav.studio}</Link>
+              <a href="#contact-form" onClick={() => setMenuOpen(false)}>{content.nav.contact}</a>
             </nav>
             <div className="topbar-actions">
               <div className="lang-switch">
@@ -797,6 +806,17 @@ export default function Home() {
                   DE
                 </button>
               </div>
+              <button
+                className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
+                type="button"
+                aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <span />
+                <span />
+                <span />
+              </button>
             </div>
           </header>
 
