@@ -1545,11 +1545,22 @@ video:not([controls]) {
   }
 
   .top-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     order: 3;
     width: 100%;
+    gap: 4px;
     justify-content: flex-start;
-    overflow-x: auto;
+    overflow: visible;
     border-radius: 18px;
+  }
+
+  .top-nav a {
+    min-width: 0;
+    padding: 8px 9px;
+    text-align: center;
+    font-size: 11px;
+    overflow-wrap: anywhere;
   }
 
   .topbar-actions {
@@ -1638,6 +1649,24 @@ video:not([controls]) {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 4px;
+    overflow: visible;
+  }
+
+  .top-nav a {
+    min-width: 0;
+    padding: 8px 9px;
+    text-align: center;
+    font-size: 11px;
+    overflow-wrap: anywhere;
   }
 }
 
