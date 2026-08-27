@@ -636,7 +636,7 @@ body {
 }
 
 .case-teaser-media-life-passion img {
-  object-position: 62% center;
+  object-position: center center;
 }
 
 .case-teaser:hover .case-teaser-media img {
@@ -1692,9 +1692,6 @@ video:not([controls]) {
     padding-bottom: 0;
   }
 
-  .case-teaser-media {
-    aspect-ratio: 16 / 10;
-  }
 }
 
 @media (min-width: 900px) {
