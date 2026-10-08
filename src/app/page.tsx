@@ -743,12 +743,12 @@ export default function Home() {
         <div className="loading-panel loading-panel-right" />
         <div className="loading-core">
           <Image
-            alt="Fremlos Media"
+            alt="KUKIN Media"
             className="loading-logo"
-            height={591}
+            height={800}
             priority
-            src="/logo/fremlos-media-logo-white.png"
-            width={591}
+            src="/logo/kukin-media-weblogo-v2.png"
+            width={2000}
           />
           <p className="loading-percent">{progress}%</p>
           <div className="loading-bar">
@@ -778,7 +778,7 @@ export default function Home() {
         <section className="mx-auto min-h-screen w-full max-w-6xl px-5 pt-7 md:px-10">
           <header className="topbar scroll-reveal mb-14 flex items-center justify-between" data-animate>
             <a className="brand-lockup" href="#top">
-              <Image alt="Fremlos Media" className="brand-logo" height={591} src="/logo/fremlos-media-logo-white.png" width={591} />
+              <Image alt="KUKIN Media" className="brand-logo" height={800} src="/logo/kukin-media-weblogo-v2.png" width={2000} />
             </a>
             <nav className={`top-nav ${menuOpen ? "is-open" : ""}`} aria-label="Hlavní navigace">
               <a

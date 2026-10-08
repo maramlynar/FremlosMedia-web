@@ -149,7 +149,7 @@ body {
 }
 
 .brand-logo {
-  width: min(42vw, 182px);
+  width: min(42vw, 220px);
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55));
@@ -1508,7 +1508,7 @@ video:not([controls]) {
 }
 
 .loading-logo {
-  width: min(72vw, 320px);
+  width: min(76vw, 420px);
   height: auto;
   margin: 0 auto;
   display: block;
@@ -1605,7 +1605,7 @@ video:not([controls]) {
   }
 
   .brand-logo {
-    width: min(26vw, 96px);
+    width: min(34vw, 138px);
   }
 
   .top-nav {

@@ -52,10 +52,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo/fremlos-media-logo-colour.png",
-        width: 591,
-        height: 591,
-        alt: "Fremlos Media",
+        url: "/logo/kukin-media-weblogo-v2.png",
+        width: 2000,
+        height: 800,
+        alt: "KUKIN Media",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fremlos Media | Dominik Freml & Mára Mlynář",
     description: "Video produkce pro značky, eventy, reklamy a sociální sítě.",
-    images: ["/logo/fremlos-media-logo-colour.png"],
+    images: ["/logo/kukin-media-weblogo-v2.png"],
   },
   icons: {
     icon: [
@@ -85,7 +85,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Fremlos Media",
     url: siteUrl,
-    logo: `${siteUrl}/logo/fremlos-media-logo-colour.png`,
+    logo: `${siteUrl}/logo/kukin-media-weblogo-v2.png`,
     email: "info@fremlosmedia.cz",
     sameAs: ["https://www.instagram.com/fremlosmedia/"],
     founder: [

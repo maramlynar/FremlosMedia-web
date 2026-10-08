@@ -58,8 +58,8 @@ export default function StudioPage() {
         </div>
 
         <header className="topbar studio-topbar">
-          <Link className="brand-lockup" href="/" aria-label="Fremlos Media">
-            <Image alt="Fremlos Media" className="brand-logo" height={591} src="/logo/fremlos-media-logo-white.png" width={591} />
+          <Link className="brand-lockup" href="/" aria-label="KUKIN Media">
+            <Image alt="KUKIN Media" className="brand-logo" height={800} src="/logo/kukin-media-weblogo-v2.png" width={2000} />
           </Link>
         </header>
 
