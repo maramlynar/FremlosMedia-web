@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Studio",
+export const metadata: Metadata = pageMetadata({
+  title: "Podcast studio Brno – natáčení podcastů a videí",
   description:
-    "Fremlos Studio v Brně pro podcasty, rozhovory, talking head videa, produktové foto a video i firemní obsah.",
-  alternates: {
-    canonical: "/studio",
-  },
-};
+    "KUKIN Studio na Cejlu v Brně. Podcast a content studio pro rozhovory, talking head videa, produktové foto a video i firemní obsah. Kamery, světla i zvuk zajistíme.",
+  path: "/studio",
+});
 
 const useCases = [
   {
@@ -64,7 +63,7 @@ export default function StudioPage() {
         </header>
 
         <div className="studio-hero-inner">
-          <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">Fremlos Studio / Brno</p>
+          <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">KUKIN Studio / Brno</p>
           <h1 className="headline studio-hero-title">
             Content
             <span>studio.</span>
@@ -83,7 +82,7 @@ export default function StudioPage() {
         </div>
 
         <div className="marquee studio-marquee">
-          <div>FREMLOS STUDIO / CONTENT STUDIO BRNO / PODCAST / VIDEO / FOTO / PRODUCTION / </div>
+          <div>KUKIN STUDIO / CONTENT STUDIO BRNO / PODCAST / VIDEO / FOTO / PRODUCTION / </div>
         </div>
       </section>
 
@@ -197,7 +196,7 @@ export default function StudioPage() {
           <p>
             Stačí stručně. Podcast, rozhovor, produkt, firemní obsah nebo cokoli co tě napadne.
           </p>
-          <a className="btn-primary btn-fx mt-7" href="mailto:info@fremlosmedia.cz?subject=Poptavka%20Fremlos%20Studio">
+          <a className="btn-primary btn-fx mt-7" href="mailto:info@fremlosmedia.cz?subject=Poptavka%20KUKIN%20Studio">
             Pošli nám mail
           </a>
         </article>

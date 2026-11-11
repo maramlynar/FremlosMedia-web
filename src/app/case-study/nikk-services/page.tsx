@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Case study: NIKK Services",
   description:
     "Jak se video stalo součástí systému, který NIKK Services pomáhá získávat větší a komplexnější zakázky.",
-};
+  path: "/case-study/nikk-services",
+});
 
 const metrics = [
   {
@@ -131,13 +133,13 @@ export default function NikkServicesCaseStudyPage() {
 
   return (
     <main className="category-page pb-18">
-      <section className="mx-auto w-full max-w-6xl px-5 pt-10 md:px-10">
+      <section className="mx-auto w-full max-w-6xl 2xl:max-w-[1400px] px-5 pt-10 md:px-10">
         <div className="scroll-reveal is-visible">
           <Link className="back-link" href="/#case-studies">
             ← Zpět na case studies
           </Link>
           <p className="mt-8 text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">
-            Case study: FremlosMedia × NIKK Services
+            Case study: KUKIN Media × NIKK Services
           </p>
           <h1 className="headline nikk-hero-title mt-4 max-w-4xl text-5xl leading-[0.95] md:text-7xl">
             Z 3 na 8 velkých realizací za rok

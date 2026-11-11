@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
 import "./globals.css";
+import { OG_IMAGE } from "@/lib/seo";
+import { InstagramLink } from "./InstagramLink";
 
-const siteUrl = "https://www.fremlosmedia.cz";
+const siteUrl = "https://www.kukinmedia.cz";
+
+const HOME_TITLE = "Videoprodukce Brno – firemní, reklamní a eventová videa | KUKIN Media";
+const HOME_DESCRIPTION =
+  "Videoprodukce z Brna. Natáčíme firemní, reklamní a eventová videa, aftermovie, podcasty i záběry z FPV dronu. Jezdíme po celé ČR i EU.";
 
 const heading = Bebas_Neue({
   variable: "--font-heading",
@@ -18,52 +24,47 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fremlos Media | Dominik Freml & Mára Mlynář",
-    template: "%s | Fremlos Media",
+    default: HOME_TITLE,
+    template: "%s | KUKIN Media",
   },
-  description:
-    "Fremlos Media tvoří Dominik Freml a Mára Mlynář. Video produkce pro značky, eventy, reklamy a sociální sítě.",
+  description: HOME_DESCRIPTION,
   keywords: [
-    "Fremlos Media",
-    "Dominik Freml",
-    "Mára Mlynář",
-    "Marek Mlynář",
+    "videoprodukce Brno",
     "video produkce",
+    "kameraman Brno",
+    "firemní video",
     "reklamní video",
     "eventové video",
-    "firemní video",
+    "aftermovie",
+    "podcast studio Brno",
+    "natáčení dronem",
+    "KUKIN Media",
+    "Dominik Freml",
+    "Mára Mlynář",
   ],
   authors: [
     { name: "Dominik Freml" },
     { name: "Mára Mlynář" },
   ],
   creator: "Dominik Freml, Mára Mlynář",
-  publisher: "Fremlos Media",
+  publisher: "KUKIN Media",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Fremlos Media | Dominik Freml & Mára Mlynář",
-    description:
-      "Video produkce Fremlos Media: Dominik Freml a Mára Mlynář tvoří reklamní, eventová a firemní videa.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     url: siteUrl,
-    siteName: "Fremlos Media",
+    siteName: "KUKIN Media",
     locale: "cs_CZ",
     type: "website",
-    images: [
-      {
-        url: "/logo/kukin-media-weblogo-v2.png",
-        width: 2000,
-        height: 800,
-        alt: "KUKIN Media",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fremlos Media | Dominik Freml & Mára Mlynář",
-    description: "Video produkce pro značky, eventy, reklamy a sociální sítě.",
-    images: ["/logo/kukin-media-weblogo-v2.png"],
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: [
@@ -82,12 +83,31 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Fremlos Media",
+    "@type": "ProfessionalService",
+    name: "KUKIN Media",
+    description: HOME_DESCRIPTION,
     url: siteUrl,
     logo: `${siteUrl}/logo/kukin-media-weblogo-v2.png`,
+    image: `${siteUrl}${OG_IMAGE.url}`,
     email: "info@fremlosmedia.cz",
-    sameAs: ["https://www.instagram.com/fremlosmedia/"],
+    telephone: "+420739803734",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Cejl 29/76",
+      addressLocality: "Brno",
+      postalCode: "602 00",
+      addressCountry: "CZ",
+    },
+    areaServed: [
+      { "@type": "City", name: "Brno" },
+      { "@type": "Country", name: "Česko" },
+      { "@type": "Place", name: "Evropská unie" },
+    ],
+    sameAs: [
+      "https://www.instagram.com/kukinmedia/",
+      "https://www.instagram.com/kukinstudio/",
+      "https://www.google.com/search?kgmid=/g/11vy133vzf",
+    ],
     founder: [
       {
         "@type": "Person",
@@ -113,20 +133,7 @@ export default function RootLayout({
         <div className="site-shell">
           <div className="site-content">{children}</div>
           <footer className="site-footer">
-            <a
-              aria-label="Fremlos Media on Instagram"
-              className="ig-link"
-              href="https://www.instagram.com/fremlosmedia/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg aria-hidden="true" className="ig-icon" viewBox="0 0 24 24">
-                <path
-                  d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8Zm9.4 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
+            <InstagramLink />
           </footer>
         </div>
       </body>

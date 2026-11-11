@@ -73,12 +73,12 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Reklamní, eventový, firemní.",
     ctaPrimary: "Napiš nám",
     ctaSecondary: "Portfolio",
-    reelLabel: "FREMLOS MEDIA / CINEMATIC / FAST DELIVERY /",
+    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
     showreelLabel: "",
     showreelTitle: "Co točíme",
     showreelItems: [
       {
-        title: "Eventové videa",
+        title: "Eventová videa",
         meta: "",
         tone: "",
         href: "/showreel/eventove-videa",
@@ -191,7 +191,7 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Commercial, event, corporate.",
     ctaPrimary: "Write to us",
     ctaSecondary: "Portfolio",
-    reelLabel: "FREMLOS MEDIA / CINEMATIC / FAST DELIVERY /",
+    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
     showreelLabel: "",
     showreelTitle: "What we shoot",
     showreelItems: [
@@ -309,7 +309,7 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Werbe-, Event- und Unternehmensvideos.",
     ctaPrimary: "Schreib uns",
     ctaSecondary: "Portfolio",
-    reelLabel: "FREMLOS MEDIA / CINEMATIC / FAST DELIVERY /",
+    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
     showreelLabel: "",
     showreelTitle: "Was wir drehen",
     showreelItems: [
@@ -775,7 +775,7 @@ export default function Home() {
         <div className="orb orb-a" style={{ transform: `translateY(${orbitOffset}px)` }} />
         <div className="orb orb-b" style={{ transform: `translateY(${-orbitOffset}px)` }} />
 
-        <section className="mx-auto min-h-screen w-full max-w-6xl px-5 pt-7 md:px-10">
+        <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 pt-7 md:px-10 2xl:max-w-[1400px]">
           <header className="topbar scroll-reveal mb-14 flex items-center justify-between" data-animate>
             <a className="brand-lockup" href="#top">
               <Image alt="KUKIN Media" className="brand-logo" height={800} src="/logo/kukin-media-weblogo-v2.png" width={2000} />
@@ -820,10 +820,10 @@ export default function Home() {
             </div>
           </header>
 
-          <div className="grid items-end gap-8 md:grid-cols-[1.5fr_1fr]">
+          <div className="my-auto grid items-end gap-8 md:grid-cols-[1.5fr_1fr]">
             <div className="scroll-reveal" data-animate>
               <p className="lang-animate mb-5 text-xs font-bold tracking-[0.25em] text-orange-300 uppercase">{content.label}</p>
-              <h1 className="headline text-7xl leading-[0.85] md:text-[9.5rem]" style={{ transform: `translateY(${heroOffset}px)` }}>
+              <h1 className="headline text-7xl leading-[0.85] md:text-[9.5rem] 2xl:text-[11.5rem]" style={{ transform: `translateY(${heroOffset}px)` }}>
                 <span className="hero-line lang-animate block">{content.heroTop}</span>
                 <span className="hero-line lang-animate block text-orange-300">{content.heroBottom}</span>
               </h1>
@@ -876,12 +876,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="marquee mt-16">
+          <div className="marquee mt-16 mb-10">
             <div>{content.reelLabel.repeat(5)}</div>
           </div>
         </section>
 
-        <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10" id="case-studies">
+        <section className="mx-auto mt-20 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10" id="case-studies">
           <div className="mb-8 scroll-reveal lang-animate" data-animate>
             <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.caseStudiesSection.eyebrow}</p>
             <h2 className="headline mt-3 text-5xl md:text-7xl">{content.caseStudiesSection.title}</h2>
@@ -929,7 +929,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto mt-20 w-full max-w-6xl px-5 md:px-10" id="showreel">
+        <section className="mx-auto mt-20 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10" id="showreel">
           <div className="mb-10 scroll-reveal" data-animate>
             <p className="lang-animate text-xs tracking-[0.26em] text-zinc-300 uppercase">{content.showreelLabel}</p>
             <h2 className="headline lang-animate mt-3 text-5xl md:text-7xl">{content.showreelTitle}</h2>
@@ -952,7 +952,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto mt-24 w-full max-w-6xl px-5 md:px-10">
+        <section className="mx-auto mt-24 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10">
           <div className="scroll-reveal is-visible">
             <p className="text-xs tracking-[0.26em] text-zinc-300 uppercase">{content.aboutLabel}</p>
             <h2 className="headline mt-3 text-5xl md:text-7xl">{content.aboutTitle}</h2>
@@ -1003,7 +1003,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto mt-24 w-full max-w-6xl px-5 md:px-10">
+        <section className="mx-auto mt-24 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10">
           <article className="process-shell scroll-reveal lang-animate" data-animate>
             <h2 className="headline text-4xl md:text-6xl">{content.processTitle}</h2>
             <div className="process-grid mt-7">
@@ -1017,14 +1017,30 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="mx-auto mt-24 w-full max-w-6xl px-5 md:px-10" id="contact-form">
+        <section className="mx-auto mt-24 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10" id="contact-form">
           <article className="cta-shell scroll-reveal lang-animate" data-animate>
             <h2 className="headline text-4xl md:text-7xl">{content.contactTitle}</h2>
             <p className="mt-4 text-zinc-200">{content.contactLead}</p>
             <div className="contact-grid mt-8">
-              <a className="cta-mail" href="mailto:info@fremlosmedia.cz">
-                {content.contactButton}
-              </a>
+              <address className="contact-details">
+                <a className="cta-mail" href="mailto:info@fremlosmedia.cz">
+                  {content.contactButton}
+                </a>
+                <a className="cta-mail" href="tel:+420739803734">
+                  +420 739 803 734
+                </a>
+                <span className="contact-person">Dominik Freml</span>
+                <a
+                  className="contact-address"
+                  href="https://www.google.com/search?kgmid=/g/11vy133vzf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  KUKIN Studio
+                  <br />
+                  Cejl 29/76, 602 00 Brno
+                </a>
+              </address>
               <form className="contact-form" id="contact-form-form" onSubmit={handleSubmit}>
                 <p className="text-sm tracking-[0.18em] text-zinc-300 uppercase">{formCopy.title}</p>
                 <p className="mt-2 text-zinc-300">{formCopy.lead}</p>
@@ -1049,7 +1065,7 @@ export default function Home() {
                     {formCopy.category}
                     <select onChange={setField("category")} value={formData.category}>
                       <option value="eventove-videa">
-                        {language === "cs" ? "Eventové videa" : language === "de" ? "Eventvideos" : "Event videos"}
+                        {language === "cs" ? "Eventová videa" : language === "de" ? "Eventvideos" : "Event videos"}
                       </option>
                       <option value="reklamni-videa">
                         {language === "cs" ? "Reklamní videa" : language === "de" ? "Werbevideos" : "Commercial videos"}

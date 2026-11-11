@@ -1,12 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getShowreelCategory, SHOWREEL_CATEGORIES, type CategorySlug } from "@/lib/showreel";
 import { CategoryVideoCard } from "./CategoryVideoCard";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = { category: string };
 
 export function generateStaticParams() {
   return SHOWREEL_CATEGORIES.map((category) => ({ category: category.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { category } = await params;
+  const categoryData = getShowreelCategory(category);
+
+  if (!categoryData) {
+    return {};
+  }
+
+  return pageMetadata({
+    title: `${categoryData.titleCs} – videoprodukce Brno`,
+    description: categoryData.introCs,
+    path: `/showreel/${categoryData.slug}`,
+  });
 }
 
 export default async function ShowreelCategoryPage({
@@ -23,12 +40,12 @@ export default async function ShowreelCategoryPage({
 
   return (
     <main className="category-page pb-18">
-      <section className="mx-auto w-full max-w-6xl px-5 pt-10 md:px-10">
+      <section className="mx-auto w-full max-w-6xl 2xl:max-w-[1400px] px-5 pt-10 md:px-10">
         <div className="scroll-reveal is-visible">
           <Link className="back-link" href="/#showreel">
             ← Zpět na showreel
           </Link>
-          <p className="mt-8 text-xs tracking-[0.24em] text-zinc-300 uppercase">Fremlos Media Category</p>
+          <p className="mt-8 text-xs tracking-[0.24em] text-zinc-300 uppercase">KUKIN Media Category</p>
           <h1 className="headline mt-4 text-5xl md:text-7xl">{categoryData.titleCs}</h1>
           <p className="mt-5 max-w-2xl text-zinc-200">{categoryData.introCs}</p>
           <p className="mt-2 max-w-2xl text-zinc-400">{categoryData.introEn}</p>

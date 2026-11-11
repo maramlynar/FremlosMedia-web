@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Case study: Life Passion",
+  description:
+    "Jak vzniká video, které má mít víc než jen hezký obraz? Proces od nápadu přes natáčecí den až po střih, zvuk a finální výstup.",
+  path: "/case-study/life-passion",
+});
 
 const pdfSections = [
   {
@@ -88,7 +97,7 @@ export default function LifePassionCaseStudyPage() {
 
   return (
     <main className="category-page pb-18">
-      <section className="mx-auto w-full max-w-6xl px-5 pt-10 md:px-10">
+      <section className="mx-auto w-full max-w-6xl 2xl:max-w-[1400px] px-5 pt-10 md:px-10">
         <div className="scroll-reveal is-visible">
           <Link className="back-link" href="/#showreel">
             ← Zpět na homepage

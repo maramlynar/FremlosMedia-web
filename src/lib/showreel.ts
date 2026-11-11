@@ -21,7 +21,7 @@ export type ShowreelCategory = {
 export const SHOWREEL_CATEGORIES: ShowreelCategory[] = [
   {
     slug: "eventove-videa",
-    titleCs: "Eventové videa",
+    titleCs: "Eventová videa",
     titleEn: "Event Videos",
     introCs: "Plesy, konference, jachty, hory. Cokoliv, kde se něco děje.",
     introEn: "Balls, conferences, yachts, mountains. Anywhere something's happening.",

@@ -46,7 +46,7 @@ async function sendViaResend(payload: {
 }) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO || "info@fremlosmedia.cz";
-  const from = process.env.CONTACT_FROM || "Fremlos Media <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM || "KUKIN Media <onboarding@resend.dev>";
   const allowLogOnly = process.env.CONTACT_ALLOW_LOG_ONLY === "true";
 
   if (!apiKey || !to) {
