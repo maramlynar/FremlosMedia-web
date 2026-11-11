@@ -2265,3 +2265,84 @@ video:not([controls]) {
     grid-template-columns: 1fr;
   }
 }
+
+/* Client logo carousel under the showreel */
+.logo-carousel {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0 26px;
+}
+
+.logo-carousel__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #8f98a6;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.logo-carousel__viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.logo-carousel__track {
+  display: flex;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: marquee 70s linear infinite;
+}
+
+.logo-carousel:hover .logo-carousel__track {
+  animation-play-state: paused;
+}
+
+.logo-carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 clamp(24px, 3.5vw, 48px);
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.logo-carousel__item:hover {
+  opacity: 1;
+}
+
+.logo-carousel__img {
+  height: 34px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.logo-carousel__img--badge {
+  height: 56px;
+}
+
+.logo-carousel__wordmark {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: 0.06em;
+  color: #e7ebf0;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .logo-carousel__item[aria-hidden="true"] {
+    display: none;
+  }
+}

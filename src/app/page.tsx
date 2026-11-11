@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
+import { LogoCarousel } from "./LogoCarousel";
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent, type MouseEvent } from "react";
 
 type Language = "cs" | "en" | "de";
@@ -20,7 +21,7 @@ type PageCopy = {
   heroLead: string;
   ctaPrimary: string;
   ctaSecondary: string;
-  reelLabel: string;
+  clientsLabel: string;
   showreelLabel: string;
   showreelTitle: string;
   showreelItems: Array<{ title: string; meta: string; tone: string; href: string; image: string }>;
@@ -73,7 +74,7 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Reklamní, eventový, firemní.",
     ctaPrimary: "Napiš nám",
     ctaSecondary: "Portfolio",
-    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
+    clientsLabel: "Natáčeli jsme pro",
     showreelLabel: "",
     showreelTitle: "Co točíme",
     showreelItems: [
@@ -191,7 +192,7 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Commercial, event, corporate.",
     ctaPrimary: "Write to us",
     ctaSecondary: "Portfolio",
-    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
+    clientsLabel: "We've shot for",
     showreelLabel: "",
     showreelTitle: "What we shoot",
     showreelItems: [
@@ -309,7 +310,7 @@ const copy: Record<Language, PageCopy> = {
     heroLead: "Werbe-, Event- und Unternehmensvideos.",
     ctaPrimary: "Schreib uns",
     ctaSecondary: "Portfolio",
-    reelLabel: "KUKIN MEDIA / CINEMATIC / FAST DELIVERY /",
+    clientsLabel: "Wir haben gedreht für",
     showreelLabel: "",
     showreelTitle: "Was wir drehen",
     showreelItems: [
@@ -580,7 +581,7 @@ export default function Home() {
         .from(".hero-sub", { y: 35, opacity: 0, duration: 0.7 }, "-=0.65")
         .from(".btn-primary, .btn-secondary", { y: 28, opacity: 0, duration: 0.5, stagger: 0.12 }, "-=0.45")
         .from(".video-frame", { scale: 0.85, opacity: 0, rotate: 6, duration: 0.8, clearProps: "transform" }, "-=0.55")
-        .from(".marquee", { opacity: 0, y: 20, duration: 0.5 }, "-=0.45");
+        .from(".logo-carousel", { opacity: 0, y: 20, duration: 0.5 }, "-=0.45");
     }, rootRef);
 
     return () => ctx.revert();
@@ -876,9 +877,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="marquee mt-16 mb-10">
-            <div>{content.reelLabel.repeat(5)}</div>
-          </div>
+          <LogoCarousel className="mt-16 mb-10" label={content.clientsLabel} />
         </section>
 
         <section className="mx-auto mt-20 w-full max-w-6xl 2xl:max-w-[1400px] px-5 md:px-10" id="case-studies">
