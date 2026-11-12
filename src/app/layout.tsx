@@ -6,7 +6,7 @@ import { InstagramLink } from "./InstagramLink";
 
 const siteUrl = "https://www.kukinmedia.cz";
 
-const HOME_TITLE = "Videoprodukce Brno – firemní, reklamní a eventová videa | KUKIN Media";
+const HOME_TITLE = "Videoprodukce Brno | KUKIN Media";
 const HOME_DESCRIPTION =
   "Videoprodukce z Brna. Natáčíme firemní, reklamní a eventová videa, aftermovie, podcasty i záběry z FPV dronu. Jezdíme po celé ČR i EU.";
 

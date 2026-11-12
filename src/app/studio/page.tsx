@@ -4,7 +4,7 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Podcast studio Brno – natáčení podcastů a videí",
+  title: "Podcast studio Brno",
   description:
     "KUKIN Studio na Cejlu v Brně. Podcast a content studio pro rozhovory, talking head videa, produktové foto a video i firemní obsah. Kamery, světla i zvuk zajistíme.",
   path: "/studio",
