@@ -68,11 +68,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-fremlos-2026.ico", type: "image/x-icon" },
-      { url: "/favicon-fremlos-2026.svg", type: "image/svg+xml" },
+      { url: "/favicon-kukin.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon-kukin.svg", type: "image/svg+xml" },
     ],
-    shortcut: [{ url: "/favicon-fremlos-2026.ico", type: "image/x-icon" }],
-    apple: [{ url: "/apple-touch-icon.png", type: "image/png" }],
+    shortcut: [{ url: "/favicon-kukin.ico", type: "image/x-icon" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
