@@ -13,7 +13,6 @@ type Client = {
 // Only clients who agreed to be shown. Source files are in /loga, the
 // prepared copies in public/logos/clients/.
 const CLIENTS: Client[] = [
-  { name: "MotoGP", logo: "/logos/clients/motogp.svg" },
   { name: "Dormer Pramet", logo: "/logos/clients/dormer-pramet.svg" },
   { name: "Na Páka", logo: "/logos/clients/napana.png", badge: true },
   { name: "Strange Training", logo: "/logos/clients/strange.png" },
@@ -30,7 +29,7 @@ const CLIENTS: Client[] = [
   { name: "Benefit", logo: "/logos/clients/benefit-mark.png", badge: true },
   { name: "Liftor", logo: "/logos/clients/liftor.svg" },
   { name: "Meet&Deal", logo: "/logos/clients/meetdeal.svg" },
-  { name: "Digisemestr", logo: "/logos/clients/digisemestr.svg" },
+  { name: "Digisemestr", logo: "/logos/clients/digisemestr.svg", badge: true },
   { name: "Fatfuck", logo: "/logos/clients/fatfuck-alpha.png" },
 ];
 
