@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "KUKIN Media";
 export const OG_IMAGE = {
-  url: "/og-kukin.jpg",
+  url: "/og-kukin-v2.jpg",
   width: 1200,
   height: 630,
   alt: "KUKIN Media, videoprodukce Brno",
