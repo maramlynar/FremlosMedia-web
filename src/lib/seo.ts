@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "KUKIN Media";
 export const OG_IMAGE = {
-  url: "/og-image.jpg",
+  url: "/og-kukin.jpg",
   width: 1200,
   height: 630,
-  alt: SITE_NAME,
+  alt: "KUKIN Media, videoprodukce Brno",
 };
 
 // A page's openGraph replaces the layout's instead of merging with it,

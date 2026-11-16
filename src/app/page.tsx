@@ -32,6 +32,22 @@ type PageCopy = {
     body: string;
     cta: string;
   };
+  // The strongest case study, shown large above the other ones and repeated
+  // as a short proof line next to the contact form.
+  featuredCase: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    metrics: Array<{ value: string; label: string; context: string }>;
+    quote: string;
+    quoteSource: string;
+    cta: string;
+    href: string;
+    image: string;
+    imageAlt: string;
+    proof: string;
+    proofCta: string;
+  };
   caseStudiesSection: {
     eyebrow: string;
     title: string;
@@ -107,20 +123,30 @@ const copy: Record<Language, PageCopy> = {
       body: "Mrkni do našeho procesu od nápadu, přes natáčecí den, až po střih, zvuk a finální výstup.",
       cta: "Mrkni na case study",
     },
+    featuredCase: {
+      eyebrow: "Case study · NIKK Services",
+      title: "Z 3 na 8 velkých realizací ročně.",
+      lead: "Firemní video se stalo hlavní vizitkou NIKK Services. Spolu s webem a kampaněmi dnes firmě pomáhá získávat větší a dražší zakázky.",
+      metrics: [
+        { value: "3 → 8", label: "velkých realizací ročně", context: "za jeden rok" },
+        { value: "víc než 2×", label: "vyšší hodnota zakázky", context: "z cca 200 tis. na 400–500 tis. Kč" },
+        { value: "⅓", label: "poptávek zmiňuje video nebo obsah", context: "odhad majitele firmy" },
+      ],
+      quote: "Video máme. A máme to lepší než konkurence.",
+      quoteSource: "Dominik, NIKK Services",
+      cta: "Přečti si celý příběh",
+      href: "/case-study/nikk-services",
+      image: "/images/case-studies/nikk-services/tym-cover.jpg",
+      imageAlt: "Tým NIKK Services na stavbě před bagrem",
+      proof: "NIKK Services: z 3 na 8 velkých realizací ročně a víc než dvojnásobná hodnota zakázky. Video je součástí toho, co k tomu pomohlo.",
+      proofCta: "Celá case study",
+    },
     caseStudiesSection: {
       eyebrow: "Case studies",
-      title: "Nejen hezký obraz. Výsledek.",
+      title: "Videa, která pro firmu pracují.",
       intro: "Vybrané projekty, kde řešíme zadání, proces a dopad videa v reálném fungování značky.",
       itemLabel: "Case study",
       items: [
-        {
-          title: "NIKK Services",
-          lead: "Z 3 na 8 velkých realizací za rok.",
-          body: "Video se stalo součástí systému, který NIKK Services pomáhá získávat větší klienty a působit jako partner pro komplexnější projekty.",
-          cta: "Mrkni na case study",
-          href: "/case-study/nikk-services",
-          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
-        },
         {
           title: "Life Passion",
           lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
@@ -225,20 +251,30 @@ const copy: Record<Language, PageCopy> = {
       body: "Take a look inside our process from the idea, through the shoot day, to edit, sound, and final output.",
       cta: "View the case study",
     },
+    featuredCase: {
+      eyebrow: "Case study · NIKK Services",
+      title: "From 3 to 8 major projects a year.",
+      lead: "A company film became NIKK Services' main calling card. Together with the website and ad campaigns, it now helps the company win larger, higher-value jobs.",
+      metrics: [
+        { value: "3 → 8", label: "major projects per year", context: "within one year" },
+        { value: "2×+", label: "higher project value", context: "from approx. CZK 200k to 400–500k" },
+        { value: "⅓", label: "of enquiries mention the video or content", context: "owner's estimate" },
+      ],
+      quote: "We've got video. And ours is better than the competition's.",
+      quoteSource: "Dominik, NIKK Services",
+      cta: "Read the full story",
+      href: "/case-study/nikk-services",
+      image: "/images/case-studies/nikk-services/tym-cover.jpg",
+      imageAlt: "The NIKK Services crew on site in front of an excavator",
+      proof: "NIKK Services: from 3 to 8 major projects a year and more than double the project value. Video is part of what made it happen.",
+      proofCta: "Full case study",
+    },
     caseStudiesSection: {
       eyebrow: "Case studies",
-      title: "More than a good-looking image. Results.",
+      title: "Videos that work for the business.",
       intro: "Selected projects focused on the brief, the process, and the role of video in a brand's real-world growth.",
       itemLabel: "Case study",
       items: [
-        {
-          title: "NIKK Services",
-          lead: "From 3 to 8 major projects per year.",
-          body: "Video became part of a system that helps NIKK Services win larger clients and present itself as a partner for more complex work.",
-          cta: "View the case study",
-          href: "/case-study/nikk-services",
-          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
-        },
         {
           title: "Life Passion",
           lead: "How do you make a video that is more than just a good-looking image?",
@@ -343,20 +379,30 @@ const copy: Record<Language, PageCopy> = {
       body: "Schau in unseren Prozess vom Konzept über den Drehtag bis zu Schnitt, Sound und finalem Output.",
       cta: "Case Study ansehen",
     },
+    featuredCase: {
+      eyebrow: "Case Study · NIKK Services",
+      title: "Von 3 auf 8 große Projekte pro Jahr.",
+      lead: "Ein Imagefilm wurde zur wichtigsten Visitenkarte von NIKK Services. Zusammen mit Website und Kampagnen hilft er heute, größere und wertvollere Aufträge zu gewinnen.",
+      metrics: [
+        { value: "3 → 8", label: "große Projekte pro Jahr", context: "innerhalb eines Jahres" },
+        { value: "über 2×", label: "höherer Auftragswert", context: "von ca. 200 Tsd. auf 400–500 Tsd. CZK" },
+        { value: "⅓", label: "der Anfragen erwähnt Video oder Content", context: "Schätzung des Inhabers" },
+      ],
+      quote: "Video haben wir. Und unseres ist besser als das der Konkurrenz.",
+      quoteSource: "Dominik, NIKK Services",
+      cta: "Ganze Geschichte lesen",
+      href: "/case-study/nikk-services",
+      image: "/images/case-studies/nikk-services/tym-cover.jpg",
+      imageAlt: "Das Team von NIKK Services auf der Baustelle vor einem Bagger",
+      proof: "NIKK Services: von 3 auf 8 große Projekte pro Jahr und mehr als doppelter Auftragswert. Video ist Teil dessen, was dazu beigetragen hat.",
+      proofCta: "Ganze Case Study",
+    },
     caseStudiesSection: {
       eyebrow: "Case studies",
-      title: "Mehr als nur ein gutes Bild. Ergebnis.",
+      title: "Videos, die für dein Unternehmen arbeiten.",
       intro: "Ausgewählte Projekte mit Briefing, Prozess und Wirkung von Video im echten Markenauftritt.",
       itemLabel: "Case Study",
       items: [
-        {
-          title: "NIKK Services",
-          lead: "Von 3 auf 8 große Projekte pro Jahr.",
-          body: "Video wurde Teil eines Systems, das NIKK Services hilft, größere Kunden zu gewinnen und komplexere Projekte glaubwürdiger zu präsentieren.",
-          cta: "Case Study ansehen",
-          href: "/case-study/nikk-services",
-          image: "/images/case-studies/nikk-services/dron-ns-4.jpg",
-        },
         {
           title: "Life Passion",
           lead: "Wie entsteht ein Video, das mehr kann als nur gut aussehen?",
@@ -886,6 +932,45 @@ export default function Home() {
             <h2 className="headline mt-3 text-5xl md:text-7xl">{content.caseStudiesSection.title}</h2>
             <p className="mt-4 max-w-2xl text-zinc-300">{content.caseStudiesSection.intro}</p>
           </div>
+          <article className="case-feature scroll-reveal lang-animate" data-animate>
+            <div className="case-feature-cover">
+              <Image
+                alt={content.featuredCase.imageAlt}
+                fill
+                priority={false}
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                src={content.featuredCase.image}
+              />
+              <div className="case-feature-cover-text">
+                <p className="text-xs font-bold tracking-[0.26em] text-orange-300 uppercase">{content.featuredCase.eyebrow}</p>
+                <h3 className="headline case-feature-title mt-3">{content.featuredCase.title}</h3>
+              </div>
+            </div>
+            <div className="case-feature-body">
+              <div className="case-feature-copy">
+                <p className="max-w-xl text-lg leading-7 text-zinc-200">{content.featuredCase.lead}</p>
+                <blockquote className="case-feature-quote">
+                  <p>„{content.featuredCase.quote}“</p>
+                  <cite>{content.featuredCase.quoteSource}</cite>
+                </blockquote>
+                <Link className="btn-primary btn-fx case-feature-cta" href={content.featuredCase.href}>
+                  {content.featuredCase.cta}
+                  <span aria-hidden>↗</span>
+                </Link>
+              </div>
+              <div className="case-feature-metrics">
+                {content.featuredCase.metrics.map((metric) => (
+                  <div className="metric-card case-feature-metric" key={metric.label}>
+                    <p>{metric.value}</p>
+                    <div>
+                      <span>{metric.label}</span>
+                      <small>{metric.context}</small>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
           <div className="case-study-grid">
             {content.caseStudiesSection.items.map((item) => (
               <Link
@@ -1020,6 +1105,12 @@ export default function Home() {
           <article className="cta-shell scroll-reveal lang-animate" data-animate>
             <h2 className="headline text-4xl md:text-7xl">{content.contactTitle}</h2>
             <p className="mt-4 text-zinc-200">{content.contactLead}</p>
+            <Link className="case-proof" href={content.featuredCase.href}>
+              <span className="case-proof-text">{content.featuredCase.proof}</span>
+              <span className="case-proof-cta">
+                {content.featuredCase.proofCta} <span aria-hidden>↗</span>
+              </span>
+            </Link>
             <div className="contact-grid mt-8">
               <address className="contact-details">
                 <a className="cta-mail" href="mailto:info@fremlosmedia.cz">

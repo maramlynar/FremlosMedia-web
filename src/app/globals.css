@@ -2346,3 +2346,173 @@ video:not([controls]) {
     display: none;
   }
 }
+
+/* Featured case study (NIKK) on the homepage: a wide team photo as the
+   cover with the headline on it, then the story and three result numbers. */
+.case-feature {
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 100%, rgba(232, 80, 24, 0.16), transparent 45%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+}
+.case-feature-cover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.case-feature-cover img {
+  object-fit: cover;
+  object-position: 50% 30%;
+  transform: scale(1.01);
+  transition: transform 1.2s ease;
+}
+.case-feature:hover .case-feature-cover img {
+  transform: scale(1.05);
+}
+/* Darkens the bottom of the photo so the headline reads, and fades it into
+   the card below. */
+.case-feature-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(11, 9, 8, 0.96) 0%, rgba(11, 9, 8, 0.55) 32%, rgba(11, 9, 8, 0) 62%),
+    linear-gradient(to right, rgba(232, 80, 24, 0.22), rgba(232, 80, 24, 0) 45%);
+  pointer-events: none;
+}
+.case-feature-cover-text {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+}
+.case-feature-title {
+  max-width: 22ch;
+  font-size: clamp(2rem, 4.6vw, 4.4rem);
+  line-height: 0.92;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+.case-feature-body {
+  display: grid;
+  gap: 26px;
+  padding: 22px 18px 24px;
+}
+.case-feature-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.case-feature-quote {
+  margin: 24px 0 0;
+  border-left: 3px solid var(--orange);
+  padding-left: 16px;
+}
+.case-feature-quote p {
+  margin: 0;
+  color: #fff1e5;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.case-feature-quote cite {
+  display: block;
+  margin-top: 6px;
+  color: #aeb4bf;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+.case-feature-cta {
+  margin-top: 26px;
+}
+.case-feature-metrics {
+  display: grid;
+  gap: 10px;
+}
+/* Compact metric rows: the number on the left, the label beside it. */
+.case-feature-metric {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.case-feature-metric p {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  white-space: nowrap;
+}
+.case-feature-metric span {
+  margin-top: 0;
+}
+@media (min-width: 640px) {
+  .case-feature-cover {
+    aspect-ratio: 16 / 9;
+  }
+  /* All three numbers share one column as wide as the widest of them, so
+     the labels start at the same line and never run into a number. */
+  .case-feature-metrics {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+  .case-feature-metric {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    column-gap: 22px;
+    padding: 14px 20px;
+  }
+  .case-feature-cover-text {
+    left: 28px;
+    bottom: 26px;
+  }
+}
+@media (min-width: 900px) {
+  .case-feature-cover {
+    aspect-ratio: 2 / 1;
+  }
+  .case-feature-cover-text {
+    left: 36px;
+    bottom: 32px;
+  }
+  .case-feature-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 36px;
+    align-items: center;
+    padding: 30px 36px 36px;
+  }
+}
+
+/* Short proof line from the featured case study, above the contact form. */
+.case-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  margin-top: 22px;
+  border: 1px solid rgba(232, 80, 24, 0.45);
+  border-radius: 16px;
+  padding: 14px 18px;
+  background: rgba(232, 80, 24, 0.08);
+  color: #fff1e5;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.case-proof:hover {
+  border-color: var(--orange);
+  background: rgba(232, 80, 24, 0.14);
+}
+.case-proof-text {
+  flex: 1 1 320px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.case-proof-cta {
+  color: #ffbf88;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
