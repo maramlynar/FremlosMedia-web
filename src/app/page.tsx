@@ -117,41 +117,41 @@ const copy: Record<Language, PageCopy> = {
       },
     ],
     caseStudy: {
-      eyebrow: "PECKA Z NAŠÍ DÍLNY",
+      eyebrow: "PECKA Z\u00a0NAŠÍ DÍLNY",
       title: "Life Passion",
-      lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
-      body: "Mrkni do našeho procesu od nápadu, přes natáčecí den, až po střih, zvuk a finální výstup.",
-      cta: "Mrkni na case study",
+      lead: "Jak\u00a0vzniká video, které má mít víc než\u00a0jen hezký obraz?",
+      body: "Mrkni do\u00a0našeho procesu od\u00a0nápadu, přes\u00a0natáčecí den, až po\u00a0střih, zvuk a\u00a0finální výstup.",
+      cta: "Mrkni na\u00a0case study",
     },
     featuredCase: {
       eyebrow: "Case study · NIKK Services",
-      title: "Z 3 na 8 velkých realizací ročně.",
-      lead: "Firemní video se stalo hlavní vizitkou NIKK Services. Spolu s webem a kampaněmi dnes firmě pomáhá získávat větší a dražší zakázky.",
+      title: "Z\u00a03 na\u00a08 velkých realizací ročně.",
+      lead: "Firemní video se\u00a0stalo hlavní vizitkou NIKK Services. Spolu s\u00a0webem a\u00a0kampaněmi dnes firmě pomáhá získávat větší a\u00a0dražší zakázky.",
       metrics: [
-        { value: "3 → 8", label: "velkých realizací ročně", context: "za jeden rok" },
-        { value: "víc než 2×", label: "vyšší hodnota zakázky", context: "z cca 200 tis. na 400–500 tis. Kč" },
-        { value: "⅓", label: "poptávek zmiňuje video nebo obsah", context: "odhad majitele firmy" },
+        { value: "3 → 8", label: "velkých realizací ročně", context: "za\u00a0jeden rok" },
+        { value: "víc než\u00a02×", label: "vyšší hodnota zakázky", context: "z\u00a0cca 200\u00a0tis. na\u00a0400–500\u00a0tis. Kč" },
+        { value: "⅓", label: "poptávek zmiňuje video nebo\u00a0obsah", context: "odhad majitele firmy" },
       ],
-      quote: "Video máme. A máme to lepší než konkurence.",
+      quote: "Video máme. A\u00a0máme to lepší než\u00a0konkurence.",
       quoteSource: "Dominik, NIKK Services",
       cta: "Přečti si celý příběh",
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
-      imageAlt: "Tým NIKK Services na stavbě před bagrem",
-      proof: "NIKK Services: z 3 na 8 velkých realizací ročně a víc než dvojnásobná hodnota zakázky. Video je součástí toho, co k tomu pomohlo.",
+      imageAlt: "Tým NIKK Services na\u00a0stavbě před\u00a0bagrem",
+      proof: "NIKK Services: z\u00a03 na\u00a08 velkých realizací ročně a\u00a0víc než\u00a0dvojnásobná hodnota zakázky. Video je součástí toho, co k\u00a0tomu pomohlo.",
       proofCta: "Celá case study",
     },
     caseStudiesSection: {
       eyebrow: "Case studies",
-      title: "Videa, která pro firmu pracují.",
-      intro: "Vybrané projekty, kde řešíme zadání, proces a dopad videa v reálném fungování značky.",
+      title: "Videa, která pro\u00a0firmu pracují.",
+      intro: "Vybrané projekty, kde řešíme zadání, proces a\u00a0dopad videa v\u00a0reálném fungování značky.",
       itemLabel: "Case study",
       items: [
         {
           title: "Life Passion",
-          lead: "Jak vzniká video, které má mít víc než jen hezký obraz?",
-          body: "Pohled do procesu od nápadu přes natáčecí den až po střih, zvuk a finální výstup.",
-          cta: "Mrkni na case study",
+          lead: "Jak\u00a0vzniká video, které má mít víc než\u00a0jen hezký obraz?",
+          body: "Pohled do\u00a0procesu od\u00a0nápadu přes\u00a0natáčecí den až po\u00a0střih, zvuk a\u00a0finální výstup.",
+          cta: "Mrkni na\u00a0case study",
           href: "/case-study/life-passion",
           image: "/images/case-studies/life-passion/hero.png",
         },
@@ -159,18 +159,18 @@ const copy: Record<Language, PageCopy> = {
     },
     aboutLabel: "",
     aboutTitle: "Tým",
-    aboutLead: "Klikni na medailonek a přehraj video se zvukem.",
+    aboutLead: "Klikni na\u00a0medailonek a\u00a0přehraj video se\u00a0zvukem.",
     aboutMembers: [
       {
         name: "Dominik Freml",
         role: "DP & Sales",
-        note: "Budu se o vás starat, řešit vaše přání a požadavky – a potkáte mě na place s kamerou v ruce.",
+        note: "Budu se\u00a0o\u00a0vás starat, řešit vaše přání a\u00a0požadavky – a\u00a0potkáte mě na\u00a0place s\u00a0kamerou v\u00a0ruce.",
         video: "/video/dominik1.mov",
       },
       {
         name: "Mára Mlynář",
         role: "Edit & FPV",
-        note: "Primárně střihám videa, koukám na videa s marketingovým přesahem a proháním FPV drony.",
+        note: "Primárně střihám videa, koukám na\u00a0videa s\u00a0marketingovým přesahem a\u00a0proháním FPV drony.",
         video: "/video/mara.mov",
       },
     ],
@@ -179,21 +179,21 @@ const copy: Record<Language, PageCopy> = {
     services: [
       {
         title: "Brand Film",
-        desc: "Silný příběh pro launch produktu, web i paid kampaně.",
+        desc: "Silný příběh pro\u00a0launch produktu, web i\u00a0paid kampaně.",
         tag: "01",
       },
       {
         title: "Event Recap",
-        desc: "Rychlý střih highlightů se sound designem a dynamikou.",
+        desc: "Rychlý střih highlightů se\u00a0sound designem a\u00a0dynamikou.",
         tag: "02",
       },
       {
         title: "Social Burst",
-        desc: "Sada short-form videí optimalizovaných pro výkon.",
+        desc: "Sada short-form videí optimalizovaných pro\u00a0výkon.",
         tag: "03",
       },
     ],
-    processTitle: "Jak to funguje",
+    processTitle: "Jak\u00a0to funguje",
     process: [
       "Ozveš se",
       "Probereme co chceš",
@@ -201,8 +201,8 @@ const copy: Record<Language, PageCopy> = {
       "Natočíme",
       "Dodáme",
     ],
-    contactTitle: "Řekni nám o svém projektu.",
-    contactLead: "Odpovídáme do 24 hodin.",
+    contactTitle: "Řekni nám o\u00a0svém projektu.",
+    contactLead: "Odpovídáme do\u00a024\u00a0hodin.",
     contactButton: "info@fremlosmedia.cz",
   },
   en: {
@@ -247,14 +247,14 @@ const copy: Record<Language, PageCopy> = {
     caseStudy: {
       eyebrow: "FROM OUR WORKSHOP",
       title: "Life Passion",
-      lead: "How do you make a video that is more than just a good-looking image?",
-      body: "Take a look inside our process from the idea, through the shoot day, to edit, sound, and final output.",
+      lead: "How do\u00a0you make a\u00a0video that is more than just a\u00a0good-looking image?",
+      body: "Take a\u00a0look inside our process from the idea, through the shoot day, to edit, sound, and final output.",
       cta: "View the case study",
     },
     featuredCase: {
       eyebrow: "Case study · NIKK Services",
-      title: "From 3 to 8 major projects a year.",
-      lead: "A company film became NIKK Services' main calling card. Together with the website and ad campaigns, it now helps the company win larger, higher-value jobs.",
+      title: "From 3 to 8 major projects a\u00a0year.",
+      lead: "A\u00a0company film became NIKK Services' main calling card. Together with the website and ad campaigns, it now helps the company win larger, higher-value jobs.",
       metrics: [
         { value: "3 → 8", label: "major projects per year", context: "within one year" },
         { value: "2×+", label: "higher project value", context: "from approx. CZK 200k to 400–500k" },
@@ -266,19 +266,19 @@ const copy: Record<Language, PageCopy> = {
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
       imageAlt: "The NIKK Services crew on site in front of an excavator",
-      proof: "NIKK Services: from 3 to 8 major projects a year and more than double the project value. Video is part of what made it happen.",
+      proof: "NIKK Services: from 3 to 8 major projects a\u00a0year and more than double the project value. Video is part of what made it happen.",
       proofCta: "Full case study",
     },
     caseStudiesSection: {
       eyebrow: "Case studies",
       title: "Videos that work for the business.",
-      intro: "Selected projects focused on the brief, the process, and the role of video in a brand's real-world growth.",
+      intro: "Selected projects focused on the brief, the process, and the role of video in a\u00a0brand's real-world growth.",
       itemLabel: "Case study",
       items: [
         {
           title: "Life Passion",
-          lead: "How do you make a video that is more than just a good-looking image?",
-          body: "A look inside the process from the idea, through the shoot day, to edit, sound, and final output.",
+          lead: "How do\u00a0you make a\u00a0video that is more than just a\u00a0good-looking image?",
+          body: "A\u00a0look inside the process from the idea, through the shoot day, to edit, sound, and final output.",
           cta: "View the case study",
           href: "/case-study/life-passion",
           image: "/images/case-studies/life-passion/hero.png",
@@ -287,18 +287,18 @@ const copy: Record<Language, PageCopy> = {
     },
     aboutLabel: "",
     aboutTitle: "Team",
-    aboutLead: "Click on a profile card and play the video with sound.",
+    aboutLead: "Click on a\u00a0profile card and play the video with sound.",
     aboutMembers: [
       {
         name: "Dominik Freml",
         role: "DP & Sales",
-        note: "I’ll take care of you, handle your wishes and requirements — and you’ll meet me on set with a camera in my hand.",
+        note: "I’ll take care of you, handle your wishes and requirements — and you’ll meet me on set with a\u00a0camera in my hand.",
         video: "/video/dominik1.mov",
       },
       {
         name: "Mára Mlynář",
         role: "Edit & FPV",
-        note: "I primarily edit videos, look at videos through a marketing lens, and fly FPV drones.",
+        note: "I\u00a0primarily edit videos, look at videos through a\u00a0marketing lens, and fly FPV drones.",
         video: "/video/mara.mov",
       },
     ],
@@ -317,7 +317,7 @@ const copy: Record<Language, PageCopy> = {
       },
       {
         title: "Social Burst",
-        desc: "A short-form package tuned for paid and organic channels.",
+        desc: "A\u00a0short-form package tuned for paid and organic channels.",
         tag: "03",
       },
     ],
@@ -381,10 +381,10 @@ const copy: Record<Language, PageCopy> = {
     },
     featuredCase: {
       eyebrow: "Case Study · NIKK Services",
-      title: "Von 3 auf 8 große Projekte pro Jahr.",
+      title: "Von 3 auf 8 große Projekte pro\u00a0Jahr.",
       lead: "Ein Imagefilm wurde zur wichtigsten Visitenkarte von NIKK Services. Zusammen mit Website und Kampagnen hilft er heute, größere und wertvollere Aufträge zu gewinnen.",
       metrics: [
-        { value: "3 → 8", label: "große Projekte pro Jahr", context: "innerhalb eines Jahres" },
+        { value: "3 → 8", label: "große Projekte pro\u00a0Jahr", context: "innerhalb eines Jahres" },
         { value: "über 2×", label: "höherer Auftragswert", context: "von ca. 200 Tsd. auf 400–500 Tsd. CZK" },
         { value: "⅓", label: "der Anfragen erwähnt Video oder Content", context: "Schätzung des Inhabers" },
       ],
@@ -394,7 +394,7 @@ const copy: Record<Language, PageCopy> = {
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
       imageAlt: "Das Team von NIKK Services auf der Baustelle vor einem Bagger",
-      proof: "NIKK Services: von 3 auf 8 große Projekte pro Jahr und mehr als doppelter Auftragswert. Video ist Teil dessen, was dazu beigetragen hat.",
+      proof: "NIKK Services: von 3 auf 8 große Projekte pro\u00a0Jahr und mehr als doppelter Auftragswert. Video ist Teil dessen, was dazu beigetragen hat.",
       proofCta: "Ganze Case Study",
     },
     caseStudiesSection: {
@@ -655,7 +655,7 @@ export default function Home() {
     language === "cs"
       ? {
           title: "Kontaktní formulář",
-          lead: "Napiš stručně zadání a my se ozveme do 24 hodin.",
+          lead: "Napiš stručně zadání a\u00a0my se\u00a0ozveme do\u00a024\u00a0hodin.",
           name: "Jméno",
           email: "E-mail",
           company: "Firma",
@@ -664,8 +664,8 @@ export default function Home() {
           deadline: "Termín",
           message: "Zpráva",
           submit: "Odeslat poptávku",
-          success: "Díky, poptávku máme. Brzy se ozveme.",
-          error: "Odeslání se nepovedlo. Zkus to znovu nebo napiš na info@fremlosmedia.cz.",
+          success: "Díky, poptávku máme. Brzy se\u00a0ozveme.",
+          error: "Odeslání se\u00a0nepovedlo. Zkus to znovu nebo\u00a0napiš na\u00a0info@fremlosmedia.cz.",
         }
       : language === "de"
         ? {
@@ -1117,7 +1117,7 @@ export default function Home() {
                   {content.contactButton}
                 </a>
                 <a className="cta-mail" href="tel:+420739803734">
-                  +420 739 803 734
+                  +420&nbsp;739&nbsp;803&nbsp;734
                 </a>
                 <span className="contact-person">Dominik Freml</span>
                 <a
@@ -1190,19 +1190,19 @@ export default function Home() {
                         {language === "cs" ? "Vyber rozpočet" : language === "de" ? "Budget auswählen" : "Select budget"}
                       </option>
                       <option value="do-20000">
-                        {language === "cs" ? "do 20 000 Kč" : language === "de" ? "bis 20.000 CZK" : "up to CZK 20,000"}
+                        {language === "cs" ? "do\u00a020\u00a0000\u00a0Kč" : language === "de" ? "bis 20.000 CZK" : "up to CZK 20,000"}
                       </option>
                       <option value="20000-30000">
-                        {language === "cs" ? "20 000 – 30 000 Kč" : language === "de" ? "20.000 – 30.000 CZK" : "CZK 20,000 – 30,000"}
+                        {language === "cs" ? "20\u00a0000 – 30\u00a0000\u00a0Kč" : language === "de" ? "20.000 – 30.000 CZK" : "CZK 20,000 – 30,000"}
                       </option>
                       <option value="30000-50000">
-                        {language === "cs" ? "30 000 – 50 000 Kč" : language === "de" ? "30.000 – 50.000 CZK" : "CZK 30,000 – 50,000"}
+                        {language === "cs" ? "30\u00a0000 – 50\u00a0000\u00a0Kč" : language === "de" ? "30.000 – 50.000 CZK" : "CZK 30,000 – 50,000"}
                       </option>
                       <option value="50000-100000">
-                        {language === "cs" ? "50 000 – 100 000 Kč" : language === "de" ? "50.000 – 100.000 CZK" : "CZK 50,000 – 100,000"}
+                        {language === "cs" ? "50\u00a0000 – 100\u00a0000\u00a0Kč" : language === "de" ? "50.000 – 100.000 CZK" : "CZK 50,000 – 100,000"}
                       </option>
                       <option value="nad-100000">
-                        {language === "cs" ? "nad 100 000 Kč" : language === "de" ? "über 100.000 CZK" : "over CZK 100,000"}
+                        {language === "cs" ? "nad\u00a0100\u00a0000\u00a0Kč" : language === "de" ? "über 100.000 CZK" : "over CZK 100,000"}
                       </option>
                     </select>
                   </label>

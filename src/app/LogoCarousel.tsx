@@ -14,7 +14,7 @@ type Client = {
 // prepared copies in public/logos/clients/.
 const CLIENTS: Client[] = [
   { name: "Dormer Pramet", logo: "/logos/clients/dormer-pramet.svg" },
-  { name: "Na Páka", logo: "/logos/clients/napana.png", badge: true },
+  { name: "Na\u00a0Páka", logo: "/logos/clients/napana.png", badge: true },
   { name: "Strange Training", logo: "/logos/clients/strange.png" },
   { name: "Botas", logo: "/logos/clients/botas.svg" },
   { name: "NIKK Services", logo: "/logos/clients/nikk.svg" },

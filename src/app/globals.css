@@ -2516,3 +2516,723 @@ video:not([controls]) {
   text-transform: uppercase;
   white-space: nowrap;
 }
+
+/* Studio page: photo gallery. Columns keep every photo in its own
+   proportions, portrait and landscape mixed. */
+.studio-gallery {
+  columns: 2;
+  column-gap: 12px;
+}
+.studio-gallery-item {
+  margin: 0 0 12px;
+  break-inside: avoid;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 236, 224, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+.studio-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+.studio-gallery-item:hover img {
+  transform: scale(1.03);
+}
+@media (min-width: 900px) {
+  .studio-gallery {
+    columns: 3;
+    column-gap: 16px;
+  }
+  .studio-gallery-item {
+    margin-bottom: 16px;
+  }
+}
+
+/* Studio page: price list, laid out like the printed KUKIN Studio ceník:
+   rows with name and note on the left, price on the right, highlighted
+   offers framed in orange. */
+.studio-price-panel {
+  display: grid;
+  gap: 28px;
+  margin-top: 18px;
+}
+.studio-price-title {
+  margin-top: 10px;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 0.95;
+}
+.studio-panel .studio-price-intro {
+  margin: 14px 0 0;
+  color: #d6d3d1;
+  line-height: 1.6;
+}
+.studio-price-intro strong {
+  color: #fff7ed;
+}
+.studio-price-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.studio-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 236, 224, 0.12);
+}
+.studio-price-row:last-child {
+  border-bottom: 0;
+}
+.studio-price-row-highlight {
+  margin: 8px -16px;
+  padding: 16px;
+  border: 1px solid rgba(232, 80, 24, 0.75);
+  border-radius: 14px;
+  background: rgba(232, 80, 24, 0.07);
+}
+.studio-price-row-highlight + .studio-price-row-highlight {
+  margin-top: 10px;
+}
+.studio-price-row h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0;
+  color: #fff7ed;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.studio-panel .studio-price-row p {
+  margin: 4px 0 0;
+  color: #aeb4bf;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.studio-price-badge {
+  border-radius: 4px;
+  padding: 3px 7px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.studio-price-value {
+  flex: none;
+  text-align: right;
+}
+.studio-price-value strong {
+  display: block;
+  color: #fff7ed;
+  font-family: var(--font-heading, inherit);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+.studio-price-row-highlight .studio-price-value strong {
+  color: #ffbf88;
+}
+.studio-price-value small {
+  display: block;
+  margin-top: 4px;
+  color: #aeb4bf;
+  font-size: 0.75rem;
+}
+.studio-panel .studio-price-subhead {
+  margin: 30px 0 0;
+  color: #ffbf88;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.studio-price-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-content: start;
+}
+.studio-price-photos img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.studio-price-photos .studio-price-photo-wide {
+  grid-column: 1 / -1;
+}
+.studio-price-photos-single {
+  grid-template-columns: 1fr;
+}
+.studio-price-photos-single img {
+  max-height: 560px;
+}
+.studio-included {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 20px;
+}
+.studio-included > span {
+  color: #ffbf88;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.studio-included ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.studio-included li {
+  border: 1px solid rgba(255, 236, 224, 0.28);
+  border-radius: 999px;
+  padding: 5px 12px;
+  color: #fff7ed;
+  font-size: 0.85rem;
+}
+.studio-terms {
+  margin-top: 18px;
+}
+.studio-terms ul {
+  display: grid;
+  gap: 0 40px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.studio-terms li {
+  position: relative;
+  padding: 14px 0 14px 26px;
+  border-bottom: 1px solid rgba(255, 236, 224, 0.12);
+  color: #fff7ed;
+}
+.studio-terms li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 3px;
+  background: var(--orange);
+}
+@media (min-width: 900px) {
+  .studio-price-panel {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+  .studio-price-photos {
+    position: sticky;
+    top: 24px;
+  }
+  .studio-terms ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Studio page, podcast-first layout: header phone, hero facts, logos,
+   benefits, steps, plans, services, FAQ, contact and a sticky mobile CTA. */
+.studio-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.studio-brand-logo {
+  width: min(44vw, 200px);
+}
+.studio-topbar-phone {
+  border: 1px solid rgba(255, 236, 224, 0.3);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #fff7ed;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  background: rgba(12, 10, 9, 0.4);
+  backdrop-filter: blur(8px);
+}
+.studio-topbar-phone:hover {
+  border-color: var(--orange);
+}
+.studio-hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 34px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.studio-hero-facts li {
+  display: flex;
+  flex-direction: column;
+}
+.studio-hero-facts strong {
+  color: #ffbf88;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1;
+}
+.studio-hero-facts span {
+  margin-top: 4px;
+  color: #d6d3d1;
+  font-size: 0.85rem;
+}
+.studio-section.studio-logos {
+  padding-top: 40px;
+}
+.studio-benefits {
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+}
+.studio-benefit {
+  border: 1px solid rgba(255, 236, 224, 0.16);
+  border-radius: 18px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.045);
+}
+.studio-benefit span {
+  color: #ffbf88;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.studio-benefit h3 {
+  margin: 14px 0 0;
+  color: #fff7ed;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.studio-benefit p {
+  margin: 8px 0 0;
+  color: #d6d3d1;
+  line-height: 1.6;
+}
+.studio-step h3 {
+  margin: 12px 0 0;
+  color: #fff7ed;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+.studio-step span {
+  display: block;
+  margin-top: 6px;
+  color: #d6d3d1;
+  font-weight: 400;
+  line-height: 1.55;
+}
+.studio-plans + .studio-price-panel {
+  margin-top: 28px;
+}
+.studio-plans {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+  align-items: stretch;
+}
+.studio-plan {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 236, 224, 0.16);
+  border-radius: 22px;
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.045);
+}
+.studio-plan-featured {
+  border: 2px solid var(--orange);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(232, 80, 24, 0.3), transparent 55%),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 60px rgba(232, 80, 24, 0.18);
+}
+.studio-plan-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.studio-plan-head h3 {
+  margin: 0;
+  color: #fff7ed;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.studio-plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 18px 0 0;
+}
+.studio-plan-price strong {
+  color: #fff7ed;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+.studio-plan-featured .studio-plan-price strong {
+  color: #ffbf88;
+}
+.studio-plan-price small {
+  color: #aeb4bf;
+  font-size: 0.9rem;
+}
+.studio-plan-pitch {
+  margin: 12px 0 0;
+  color: #d6d3d1;
+  line-height: 1.55;
+}
+.studio-plan ul {
+  flex: 1;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(255, 236, 224, 0.12);
+  list-style: none;
+}
+.studio-plan li {
+  position: relative;
+  padding: 6px 0 6px 24px;
+  color: #fff7ed;
+  line-height: 1.45;
+}
+.studio-plan li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 900;
+}
+.studio-plan-cta {
+  align-self: stretch;
+  justify-content: center;
+  margin-top: 22px;
+}
+.studio-services {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+}
+.studio-service {
+  border: 1px solid rgba(255, 236, 224, 0.16);
+  border-radius: 20px;
+  padding: 12px 12px 22px;
+  background: rgba(255, 255, 255, 0.045);
+}
+.studio-service-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.studio-service-photo img {
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+.studio-service h3 {
+  margin: 16px 10px 0;
+  color: #fff7ed;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.studio-service p {
+  margin: 8px 10px 0;
+  color: #d6d3d1;
+  line-height: 1.55;
+}
+.studio-service a {
+  display: inline-block;
+  margin: 14px 10px 0;
+  color: #ffbf88;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.studio-faq {
+  margin-top: 26px;
+  border-top: 1px solid rgba(255, 236, 224, 0.14);
+}
+.studio-faq details {
+  border-bottom: 1px solid rgba(255, 236, 224, 0.14);
+}
+.studio-faq summary {
+  position: relative;
+  padding: 20px 40px 20px 0;
+  color: #fff7ed;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.studio-faq summary::-webkit-details-marker {
+  display: none;
+}
+.studio-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--orange);
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+.studio-faq details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.studio-faq details p {
+  max-width: 46rem;
+  margin: 0;
+  padding: 0 0 20px;
+  color: #d6d3d1;
+  line-height: 1.65;
+}
+.studio-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+.studio-contact .studio-contact-address {
+  margin-top: 22px;
+  color: #aeb4bf;
+  font-size: 0.9rem;
+}
+.studio-contact-address a {
+  color: #ffbf88;
+}
+.studio-sticky-cta {
+  position: fixed;
+  z-index: 200;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 15px 20px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+.studio-page {
+  padding-bottom: 84px;
+}
+@media (min-width: 640px) {
+  .studio-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 768px) {
+  .studio-sticky-cta {
+    display: none;
+  }
+  .studio-page {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 900px) {
+  .studio-benefits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .studio-plans {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+  }
+  .studio-plan-featured {
+    padding-block: 38px;
+  }
+  .studio-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.studio-hero .studio-hero-inner {
+  padding-top: 48px;
+}
+/* Header, hero text and sections share one content column: the sections are
+   72rem wide with 20px padding, so the hero parts are 72rem minus 40px. */
+.studio-topbar,
+.studio-hero .studio-hero-inner {
+  width: min(100%, calc(72rem - 40px));
+  margin-inline: auto;
+}
+.studio-topbar .brand-lockup {
+  margin-left: 0;
+}
+/* Headings use the full column so short titles don't leave one word on its
+   own line; the paragraph under them stays at a readable width. */
+.studio-section-heading {
+  max-width: none;
+}
+.studio-section-heading > p:last-child {
+  max-width: 44rem;
+}
+/* Gallery as an even grid: every tile has the same shape, so rows and the
+   bottom edge line up. */
+.studio-gallery {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.studio-gallery-item {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+}
+.studio-gallery-item img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+@media (min-width: 900px) {
+  .studio-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .studio-gallery-item {
+    margin: 0;
+  }
+}
+/* Balanced line breaks, so a heading never ends with one word alone. */
+.studio-page h1,
+.studio-page h2,
+.studio-page h3 {
+  text-wrap: balance;
+}
+@media (min-width: 700px) {
+  .studio-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* Hero title: enough line height that the accents of the second line
+   (Í, Č) don't run into the first line. */
+.studio-hero .studio-hero-title {
+  line-height: 1;
+}
+.studio-hero .studio-hero-title span {
+  margin-top: 0.1em;
+}
+/* Podcast photos next to the add-ons: fixed shapes, cropped to fit, so they
+   never stretch past the panel. */
+.studio-price-photos img {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+.studio-price-photos .studio-price-photo-wide {
+  aspect-ratio: 3 / 2;
+}
+.studio-price-photos-single img {
+  aspect-ratio: 4 / 5;
+}
+/* The whole studio: the dark set and the white backdrop side by side. */
+.studio-space {
+  display: grid;
+  gap: 12px;
+}
+.studio-space figure {
+  margin: 0;
+  border: 1px solid rgba(255, 236, 224, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.studio-space img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.studio-space figure:last-child img {
+  aspect-ratio: 4 / 5;
+  object-position: 50% 60%;
+}
+@media (min-width: 900px) {
+  .studio-space {
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+    gap: 16px;
+  }
+  .studio-space img,
+  .studio-space figure:last-child img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .studio-space figure:first-child img {
+    aspect-ratio: 3 / 2;
+  }
+}
+/* Studio contact: details on the left, inquiry form on the right. */
+.studio-contact.studio-contact-grid {
+  display: grid;
+  gap: 28px;
+  text-align: left;
+}
+.studio-contact-details {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+  font-style: normal;
+}
+.studio-contact-details a {
+  color: #ffbf88;
+  font-weight: 700;
+  text-decoration: none;
+}
+.studio-contact-details a:first-child {
+  font-size: 1.35rem;
+}
+.studio-contact-details span {
+  color: #d6d3d1;
+  line-height: 1.5;
+}
+.studio-form {
+  scroll-margin-top: 24px;
+}
+.studio-form > label {
+  display: block;
+}
+.studio-form-optional {
+  color: #aeb4bf;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+@media (min-width: 900px) {
+  .studio-contact.studio-contact-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 40px;
+    align-items: start;
+  }
+}
+.studio-form > label + .form-row {
+  margin-top: 16px;
+}
+[data-studio-form-visible="true"] .studio-sticky-cta {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+.studio-sticky-cta {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}

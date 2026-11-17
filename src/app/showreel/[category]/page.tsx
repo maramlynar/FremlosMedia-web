@@ -43,7 +43,7 @@ export default async function ShowreelCategoryPage({
       <section className="mx-auto w-full max-w-6xl 2xl:max-w-[1400px] px-5 pt-10 md:px-10">
         <div className="scroll-reveal is-visible">
           <Link className="back-link" href="/#showreel">
-            ← Zpět na showreel
+            ← Zpět na&nbsp;showreel
           </Link>
           <p className="mt-8 text-xs tracking-[0.24em] text-zinc-300 uppercase">KUKIN Media Category</p>
           <h1 className="headline mt-4 text-5xl md:text-7xl">{categoryData.titleCs}</h1>
