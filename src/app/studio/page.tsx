@@ -115,8 +115,8 @@ type PriceRow = {
 };
 
 const podcastExtras: PriceRow[] = [
-  { name: "Video na\u00a0výšku pro\u00a0sociální sítě", note: "Krátký sestřih z\u00a0dílu", price: "1\u00a0199\u00a0Kč", unit: "ks" },
-  { name: "Balíček 5 videí na\u00a0výšku", note: "Z\u00a0jednoho dílu", price: "3\u00a0999\u00a0Kč" },
+  { name: "Video na\u00a0výšku pro\u00a0sociální sítě", note: "Krátký sestřih z\u00a0dílu", price: "1\u00a0190\u00a0Kč", unit: "ks" },
+  { name: "Balíček 5 videí na\u00a0výšku", note: "Z\u00a0jednoho dílu", price: "3\u00a0990\u00a0Kč" },
   { name: "Expresní dodání", note: "Hotový díl do\u00a048\u00a0hodin", price: "+1\u00a0500\u00a0Kč" },
   { name: "Moderátor", note: "Příprava, call a\u00a0moderace dílu. V\u00a0Sérii 1\u00a0000\u00a0Kč / měsíc", price: "1\u00a0490\u00a0Kč", unit: "díl" },
 ];
