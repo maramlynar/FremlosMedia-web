@@ -32,8 +32,7 @@ type PageCopy = {
     body: string;
     cta: string;
   };
-  // The strongest case study, shown large above the other ones and repeated
-  // as a short proof line next to the contact form.
+  // The strongest case study, shown large above the other case studies.
   featuredCase: {
     eyebrow: string;
     title: string;
@@ -45,8 +44,6 @@ type PageCopy = {
     href: string;
     image: string;
     imageAlt: string;
-    proof: string;
-    proofCta: string;
   };
   caseStudiesSection: {
     eyebrow: string;
@@ -138,8 +135,6 @@ const copy: Record<Language, PageCopy> = {
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
       imageAlt: "Tým NIKK Services na\u00a0stavbě před\u00a0bagrem",
-      proof: "NIKK Services: z\u00a03 na\u00a08 velkých realizací ročně a\u00a0víc než\u00a0dvojnásobná hodnota zakázky. Video je součástí toho, co k\u00a0tomu pomohlo.",
-      proofCta: "Celá case study",
     },
     caseStudiesSection: {
       eyebrow: "Case studies",
@@ -266,8 +261,6 @@ const copy: Record<Language, PageCopy> = {
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
       imageAlt: "The NIKK Services crew on site in front of an excavator",
-      proof: "NIKK Services: from 3 to 8 major projects a\u00a0year and more than double the project value. Video is part of what made it happen.",
-      proofCta: "Full case study",
     },
     caseStudiesSection: {
       eyebrow: "Case studies",
@@ -394,8 +387,6 @@ const copy: Record<Language, PageCopy> = {
       href: "/case-study/nikk-services",
       image: "/images/case-studies/nikk-services/tym-cover.jpg",
       imageAlt: "Das Team von NIKK Services auf der Baustelle vor einem Bagger",
-      proof: "NIKK Services: von 3 auf 8 große Projekte pro\u00a0Jahr und mehr als doppelter Auftragswert. Video ist Teil dessen, was dazu beigetragen hat.",
-      proofCta: "Ganze Case Study",
     },
     caseStudiesSection: {
       eyebrow: "Case studies",
@@ -1105,12 +1096,6 @@ export default function Home() {
           <article className="cta-shell scroll-reveal lang-animate" data-animate>
             <h2 className="headline text-4xl md:text-7xl">{content.contactTitle}</h2>
             <p className="mt-4 text-zinc-200">{content.contactLead}</p>
-            <Link className="case-proof" href={content.featuredCase.href}>
-              <span className="case-proof-text">{content.featuredCase.proof}</span>
-              <span className="case-proof-cta">
-                {content.featuredCase.proofCta} <span aria-hidden>↗</span>
-              </span>
-            </Link>
             <div className="contact-grid mt-8">
               <address className="contact-details">
                 <a className="cta-mail" href="mailto:info@fremlosmedia.cz">
